@@ -14,13 +14,11 @@ module DRAM_wrapper
     clka,
     dina,
     douta,
-    ena,
     wea);
   input [15:0]addra;
   input clka;
   input [15:0]dina;
   output [15:0]douta;
-  input ena;
   input [0:0]wea;
 
   wire [15:0]addra;
@@ -35,6 +33,5 @@ module DRAM_wrapper
         .clka(clka),
         .dina(dina),
         .douta(douta),
-        .ena(ena),
         .wea(wea));
 endmodule
