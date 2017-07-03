@@ -1,0 +1,20 @@
+{
+   guistr: "# # String gsaved with Nlview 6.6.5b  2016-09-06 bk=1.3687 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port ena -pg 1 -y -220 -defaultsOSRD
+preplace port clka -pg 1 -y -280 -defaultsOSRD
+preplace portBus dina -pg 1 -y -260 -defaultsOSRD
+preplace portBus addra -pg 1 -y -300 -defaultsOSRD
+preplace portBus douta -pg 1 -y -230 -defaultsOSRD
+preplace portBus wea -pg 1 -y -200 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 1 -y -260 -defaultsOSRD
+preplace netloc addra_1 1 0 1 N
+preplace netloc dina_1 1 0 1 N
+preplace netloc clka_1 1 0 1 N
+preplace netloc blk_mem_gen_0_douta 1 0 2 -10 -150 200J
+preplace netloc ena_1 1 0 1 N
+preplace netloc wea_1 1 0 1 N
+levelinfo -pg 1 -30 100 220 -top -370 -bot 80
+",
+}
+0
