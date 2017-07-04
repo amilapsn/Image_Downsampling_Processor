@@ -7,15 +7,25 @@
 # IP Integrator Tcl commands easier.
 ################################################################
 
+namespace eval _tcl {
+proc get_script_folder {} {
+   set script_path [file normalize [info script]]
+   set script_folder [file dirname $script_path]
+   return $script_folder
+}
+}
+variable script_folder
+set script_folder [_tcl::get_script_folder]
+
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2015.4
+set scripts_vivado_version 2017.2
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
    puts ""
-   puts "ERROR: This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."
+   catch {common::send_msg_id "BD_TCL-109" "ERROR" "This script was generated using Vivado <$scripts_vivado_version> and is being run in <$current_vivado_version> of Vivado. Please run the script in Vivado <$scripts_vivado_version> then open the design in Vivado <$current_vivado_version>. Upgrade the design by running \"Tools => Report => Report IP Status...\", then run write_bd_tcl to create an updated script."}
 
    return 1
 }
@@ -27,17 +37,14 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source DRAM_script.tcl
 
-# If you do not already have a project created,
-# you can create a project using the following command:
-#    create_project project_1 myproj -part xc7z010clg400-1
-#    set_property BOARD_PART digilentinc.com:zybo:part0:1.0 [current_project]
+# If there is no project opened, this script will create a
+# project, but make sure you do not have an existing project
+# <./myproj/project_1.xpr> in the current working folder.
 
-# CHECKING IF PROJECT EXISTS
-if { [get_projects -quiet] eq "" } {
-   puts "ERROR: Please open or create a project!"
-   return 1
+set list_projs [get_projects -quiet]
+if { $list_projs eq "" } {
+   create_project project_1 myproj -part xc7z010clg400-1
 }
-
 
 
 # CHANGE DESIGN NAME HERE
@@ -58,7 +65,7 @@ if { ${design_name} eq "" } {
    # USE CASES:
    #    1) Design_name not set
 
-   set errMsg "ERROR: Please set the variable <design_name> to a non-empty value."
+   set errMsg "Please set the variable <design_name> to a non-empty value."
    set nRet 1
 
 } elseif { ${cur_design} ne "" && ${list_cells} eq "" } {
@@ -68,23 +75,23 @@ if { ${design_name} eq "" } {
    #    4): Current design opened AND is empty AND names diff; design_name exists in project.
 
    if { $cur_design ne $design_name } {
-      puts "INFO: Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
+      common::send_msg_id "BD_TCL-001" "INFO" "Changing value of <design_name> from <$design_name> to <$cur_design> since current design is empty."
       set design_name [get_property NAME $cur_design]
    }
-   puts "INFO: Constructing design in IPI design <$cur_design>..."
+   common::send_msg_id "BD_TCL-002" "INFO" "Constructing design in IPI design <$cur_design>..."
 
 } elseif { ${cur_design} ne "" && $list_cells ne "" && $cur_design eq $design_name } {
    # USE CASES:
    #    5) Current design opened AND has components AND same names.
 
-   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set errMsg "Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
    set nRet 1
 } elseif { [get_files -quiet ${design_name}.bd] ne "" } {
    # USE CASES: 
    #    6) Current opened design, has components, but diff names, design_name exists in project.
    #    7) No opened design, design_name exists in project.
 
-   set errMsg "ERROR: Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
+   set errMsg "Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
    set nRet 2
 
 } else {
@@ -92,19 +99,19 @@ if { ${design_name} eq "" } {
    #    8) No opened design, design_name not in project.
    #    9) Current opened design, has components, but diff names, design_name not in project.
 
-   puts "INFO: Currently there is no design <$design_name> in project, so creating one..."
+   common::send_msg_id "BD_TCL-003" "INFO" "Currently there is no design <$design_name> in project, so creating one..."
 
    create_bd_design $design_name
 
-   puts "INFO: Making design <$design_name> as current_bd_design."
+   common::send_msg_id "BD_TCL-004" "INFO" "Making design <$design_name> as current_bd_design."
    current_bd_design $design_name
 
 }
 
-puts "INFO: Currently the variable <design_name> is equal to \"$design_name\"."
+common::send_msg_id "BD_TCL-005" "INFO" "Currently the variable <design_name> is equal to \"$design_name\"."
 
 if { $nRet != 0 } {
-   puts $errMsg
+   catch {common::send_msg_id "BD_TCL-114" "ERROR" $errMsg}
    return $nRet
 }
 
@@ -118,6 +125,8 @@ if { $nRet != 0 } {
 # procedure reusable. If parentCell is "", will use root.
 proc create_root_design { parentCell } {
 
+  variable script_folder
+
   if { $parentCell eq "" } {
      set parentCell [get_bd_cells /]
   }
@@ -125,14 +134,14 @@ proc create_root_design { parentCell } {
   # Get object for parentCell
   set parentObj [get_bd_cells $parentCell]
   if { $parentObj == "" } {
-     puts "ERROR: Unable to find parent cell <$parentCell>!"
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
      return
   }
 
   # Make sure parentObj is hier blk
   set parentType [get_property TYPE $parentObj]
   if { $parentType ne "hier" } {
-     puts "ERROR: Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
      return
   }
 
@@ -146,18 +155,20 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set Address [ create_bd_port -dir I -from 15 -to 0 Address ]
-  set Memory_ON [ create_bd_port -dir I Memory_ON ]
-  set Write_Enable [ create_bd_port -dir I -from 0 -to 0 Write_Enable ]
-  set clk [ create_bd_port -dir I -type clk clk ]
-  set d_in [ create_bd_port -dir I -from 15 -to 0 -type data d_in ]
-  set d_out [ create_bd_port -dir O -from 15 -to 0 -type data d_out ]
+  set addra [ create_bd_port -dir I -from 31 -to 0 addra ]
+  set clka [ create_bd_port -dir I -type clk clka ]
+  set dina [ create_bd_port -dir I -from 31 -to 0 dina ]
+  set douta [ create_bd_port -dir O -from 15 -to 0 douta ]
+  set wea [ create_bd_port -dir I -from 3 -to 0 wea ]
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_0 ]
   set_property -dict [ list \
 CONFIG.Byte_Size {9} \
+CONFIG.Coe_File {c:/Users/ASUS/Desktop/notebooks/Processor_Design_Resources/rom.coe} \
 CONFIG.Enable_32bit_Address {false} \
+CONFIG.Enable_A {Always_Enabled} \
+CONFIG.Load_Init_File {true} \
 CONFIG.Read_Width_A {16} \
 CONFIG.Read_Width_B {16} \
 CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
@@ -170,35 +181,14 @@ CONFIG.use_bram_block {Stand_Alone} \
  ] $blk_mem_gen_0
 
   # Create port connections
-  connect_bd_net -net Address_1 [get_bd_ports Address] [get_bd_pins blk_mem_gen_0/addra]
-  connect_bd_net -net Memory_ON_1 [get_bd_ports Memory_ON] [get_bd_pins blk_mem_gen_0/ena]
-  connect_bd_net -net Write_Enable_1 [get_bd_ports Write_Enable] [get_bd_pins blk_mem_gen_0/wea]
-  connect_bd_net -net blk_mem_gen_0_douta [get_bd_ports d_out] [get_bd_pins blk_mem_gen_0/douta]
-  connect_bd_net -net clk_1 [get_bd_ports clk] [get_bd_pins blk_mem_gen_0/clka]
-  connect_bd_net -net d_in_1 [get_bd_ports d_in] [get_bd_pins blk_mem_gen_0/dina]
+  connect_bd_net -net addra_1 [get_bd_ports addra] [get_bd_pins blk_mem_gen_0/addra]
+  connect_bd_net -net blk_mem_gen_0_douta [get_bd_ports douta] [get_bd_pins blk_mem_gen_0/douta]
+  connect_bd_net -net clka_1 [get_bd_ports clka] [get_bd_pins blk_mem_gen_0/clka]
+  connect_bd_net -net dina_1 [get_bd_ports dina] [get_bd_pins blk_mem_gen_0/dina]
+  connect_bd_net -net wea_1 [get_bd_ports wea] [get_bd_pins blk_mem_gen_0/wea]
 
   # Create address segments
 
-  # Perform GUI Layout
-  regenerate_bd_layout -layout_string {
-   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.6
-#  -string -flagsOSRD
-preplace port clk -pg 1 -y -40 -defaultsOSRD
-preplace port Memory_ON -pg 1 -y 120 -defaultsOSRD
-preplace portBus Address -pg 1 -y -20 -defaultsOSRD
-preplace portBus d_in -pg 1 -y 10 -defaultsOSRD
-preplace portBus d_out -pg 1 -y 70 -defaultsOSRD
-preplace portBus Write_Enable -pg 1 -y 160 -defaultsOSRD
-preplace inst blk_mem_gen_0 -pg 1 -lvl 1 -y 20 -defaultsOSRD -resize 120 350
-preplace netloc Address_1 1 0 1 -30
-preplace netloc Write_Enable_1 1 0 1 N
-preplace netloc Memory_ON_1 1 0 1 N
-preplace netloc d_in_1 1 0 1 -20
-preplace netloc clk_1 1 0 1 -20
-preplace netloc blk_mem_gen_0_douta 1 0 2 -30 220 NJ
-levelinfo -pg 1 -50 100 220 -top -170 -bot 230
-",
-}
 
   # Restore current instance
   current_bd_instance $oldCurInst

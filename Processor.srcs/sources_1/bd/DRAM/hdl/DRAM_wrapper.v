@@ -1,8 +1,8 @@
-//Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2016.4 (lin64) Build 1756540 Mon Jan 23 19:11:19 MST 2017
-//Date        : Sun Jul  2 15:00:42 2017
-//Host        : amila-X555LJ running 64-bit Ubuntu 14.04.5 LTS
+//Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+//Date        : Tue Jul  4 15:46:58 2017
+//Host        : AquirePC running 64-bit major release  (build 9200)
 //Command     : generate_target DRAM_wrapper.bd
 //Design      : DRAM_wrapper
 //Purpose     : IP block netlist
@@ -25,7 +25,6 @@ module DRAM_wrapper
   wire clka;
   wire [15:0]dina;
   wire [15:0]douta;
-  wire ena;
   wire [0:0]wea;
 
   DRAM DRAM_i
