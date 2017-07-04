@@ -27,10 +27,10 @@ module Memory_Control(
     output reg[15:0] d_out,
     output reg[15:0] A_bus_out,
     output reg [15:0] mem_in,
-    input input_control,output_control,clk
+    input indicator,output_control,clk
     );
 always @(posedge clk) begin
-    if (input_control==0)
+    if (indicator==0)
         mem_in<=d_in;//rx
     else 
         mem_in<=AC_in;

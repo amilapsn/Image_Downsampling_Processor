@@ -1,7 +1,7 @@
 // RX- data from matlab, Tx- data to matlab , Memory on- a default one. need to make it high,data_in_con and data_out_con- the external switch part that we discussed
 module processor
     (actual_clk,
-     Rx,
+     RX,
      Tx,
      MEMORY_ON,
      Data_in_Control,
@@ -11,10 +11,10 @@ module processor
      com_done,
      processing_over_light); 
      
-    wire wae;
+    wire wea;
     wire [15:0] rx_byte, index;
     input switch;// assign this to a switch in the board
-    input Rx;
+    input RX;
     input MEMORY_ON,Data_in_Control,Data_out_Control;
     input actual_clk;
     output rx_done, com_done,processing_over_light;
@@ -31,6 +31,8 @@ module processor
     wire pc_inc,mar_inc,r2_inc,r3_inc;
     wire d_ram_write,fetch_enable;
     wire [15:0]ir_to_cu,iram_to_ir;
+    wire com_done=0;
+    /*reg indicator;*///dunno what's this for may be a light to indicate com finished
 
     //rx module
     UART_RX rx
@@ -40,9 +42,9 @@ module processor
          rx_byte,
          rx_done,
          index,
-         wae,
-         com_done,
-         input_control);
+         wea,
+         com_done/*,
+         indicator*/);
 
     //baud_gen
     Baud_gen baud
@@ -90,16 +92,16 @@ module processor
 
     //Data ram ip block
     DRAM_wrapper dram
-        (addra,
-         clka,
-         dina,
-         douta,
+        (address_wire,
+         clk,
+         mem_in,
+         mem_out,
          wea);
 
 
     //data ram controler
     Memory_Control mem_con
-        (Rx,
+        (RX,
          mem_out,
          ac_to_memory,
          Tx,
@@ -115,7 +117,7 @@ module processor
          Bbus,
          Cbus,
          ALU_control,
-         z_flag,
+         //z_flag,
          alu_r2_flag,
          alu_r3_flag);
     

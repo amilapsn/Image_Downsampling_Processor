@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-//Date        : Tue Jul  4 15:46:58 2017
+//Date        : Tue Jul  4 16:35:05 2017
 //Host        : AquirePC running 64-bit major release  (build 9200)
 //Command     : generate_target DRAM.bd
 //Design      : DRAM
@@ -16,27 +16,27 @@ module DRAM
     dina,
     douta,
     wea);
-  input [31:0]addra;
+  input [15:0]addra;
   input clka;
-  input [31:0]dina;
+  input [15:0]dina;
   output [15:0]douta;
-  input [3:0]wea;
+  input [0:0]wea;
 
-  wire [31:0]addra_1;
+  wire [15:0]addra_1;
   wire [15:0]blk_mem_gen_0_douta;
   wire clka_1;
-  wire [31:0]dina_1;
-  wire [3:0]wea_1;
+  wire [15:0]dina_1;
+  wire [0:0]wea_1;
 
-  assign addra_1 = addra[31:0];
+  assign addra_1 = addra[15:0];
   assign clka_1 = clka;
-  assign dina_1 = dina[31:0];
+  assign dina_1 = dina[15:0];
   assign douta[15:0] = blk_mem_gen_0_douta;
-  assign wea_1 = wea[3:0];
-  DRAM_blk_mem_gen_0_1 blk_mem_gen_0
-       (.addra(addra_1[15:0]),
+  assign wea_1 = wea[0];
+  DRAM_blk_mem_gen_0_0 blk_mem_gen_0
+       (.addra(addra_1),
         .clka(clka_1),
-        .dina(dina_1[15:0]),
+        .dina(dina_1),
         .douta(blk_mem_gen_0_douta),
-        .wea(wea_1[0]));
+        .wea(wea_1));
 endmodule

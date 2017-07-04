@@ -1,14 +1,14 @@
 //////////////////////////////////////////////////////////////////////////////////
-module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done,input_control);
+module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator*/);
     
     reg [2:0] state 			= 0;                         // 7 states so 3 bit variable is declared
     reg [15:0] data_2byte         = 0;          //  16 bit buffer
     reg [32:0] clock_count     = 0;             // counter tohold clok counts
     reg [2:0] rx_bit_index     = 0;                 // ?
-    output reg  [15:0] index;
+    output reg  [15:0] index=0;
     output reg wae,com_done;
     reg rxdone                    = 0;
-    output reg input_control=0;
+    /*output reg indicator=0;*///?
     output rx_done;
     output [15:0] rx_byte;
     input rx_in;
@@ -131,9 +131,10 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done,input_contr
 								rxdone <= 1'b1;
 								state <= IDLE;
 								index<=index+1;
+								
 								if(index==65536)begin
-								com_done<=1;
-								state<=END;
+                                    com_done<=1;
+                                    state<=END;
 								end
 								wae<=0;
 
@@ -144,8 +145,8 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done,input_contr
 					default:
 						state <= IDLE;
 			END:
-			  input_control<=1;
-					
+			 /* indicator<=1;*/
+			 com_done<=1;		
 			endcase
 		end
 endmodule

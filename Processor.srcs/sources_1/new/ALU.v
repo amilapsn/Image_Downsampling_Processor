@@ -19,14 +19,14 @@ always @(A_bus or B_bus or ALU_control) begin
         4'b0111: C_bus = A_bus - 512; // sub 512
         4'b1001: begin if(A_bus==16'd127) 
                        begin
-                            r2_flag=1;
-                            C_bus=16'd1;
+                            r2_flag<=1;
+                            C_bus<=16'd1;
                        end
                  end
         4'b1010: begin if(A_bus==16'd127)
                                 begin                
-                                     r3_flag=1;      
-                                     C_bus=16'd1;    
+                                     r3_flag<=1;      
+                                     C_bus<=16'd1;    
                                 end                  
                           end                                 
     endcase

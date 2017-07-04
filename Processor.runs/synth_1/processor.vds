@@ -1,0 +1,921 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Jul  4 22:45:19 2017
+# Process ID: 4104
+# Current directory: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1
+# Command line: vivado.exe -log processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source processor.tcl
+# Log file: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.vds
+# Journal file: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source processor.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.2/data/ip'.
+Command: synth_design -top processor -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14552 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 317.406 ; gain = 75.066
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'processor' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+INFO: [Synth 8-638] synthesizing module 'UART_RX' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:2]
+	Parameter CLOCKS_PER_BIT bound to: 1085 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter START bound to: 3'b001 
+	Parameter DATA_RX bound to: 3'b010 
+	Parameter STOP bound to: 3'b011 
+	Parameter CLEANUP bound to: 3'b100 
+	Parameter DELAY bound to: 1 - type: integer 
+	Parameter END bound to: 3'b101 
+INFO: [Synth 8-256] done synthesizing module 'UART_RX' (1#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:2]
+INFO: [Synth 8-638] synthesizing module 'Baud_gen' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:2]
+	Parameter FACTOR bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Baud_gen' (2#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:2]
+INFO: [Synth 8-638] synthesizing module 'A_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:1]
+WARNING: [Synth 8-567] referenced signal 'r3' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:6]
+INFO: [Synth 8-256] done synthesizing module 'A_Bus' (3#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:1]
+WARNING: [Synth 8-689] width (16) of port connection 'r2' does not match port width (8) of module 'A_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:58]
+WARNING: [Synth 8-689] width (16) of port connection 'r3' does not match port width (8) of module 'A_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:59]
+INFO: [Synth 8-638] synthesizing module 'B_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:23]
+WARNING: [Synth 8-567] referenced signal 'Bus_in' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:28]
+INFO: [Synth 8-256] done synthesizing module 'B_Bus' (4#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:23]
+INFO: [Synth 8-638] synthesizing module 'C_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:9]
+WARNING: [Synth 8-567] referenced signal 'd_in' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:8]
+INFO: [Synth 8-256] done synthesizing module 'C_Bus' (5#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:1]
+WARNING: [Synth 8-689] width (8) of port connection 'r3' does not match port width (16) of module 'C_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:78]
+INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:23]
+INFO: [Synth 8-256] done synthesizing module 'IRAM' (6#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:23]
+INFO: [Synth 8-638] synthesizing module 'DRAM_wrapper' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'DRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
+INFO: [Synth 8-638] synthesizing module 'DRAM_blk_mem_gen_0_0' [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-4104-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DRAM_blk_mem_gen_0_0' (7#1) [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-4104-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DRAM' (8#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
+INFO: [Synth 8-256] done synthesizing module 'DRAM_wrapper' (9#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Memory_Control' (10#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'd_in' does not match port width (16) of module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:104]
+WARNING: [Synth 8-689] width (1) of port connection 'd_out' does not match port width (16) of module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:107]
+INFO: [Synth 8-638] synthesizing module 'ALU' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:10]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (11#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:1]
+	Parameter FETCH1 bound to: 16'b0000000000000001 
+	Parameter FETCH2 bound to: 16'b0000000000000010 
+	Parameter CLALL1 bound to: 16'b0000000000000011 
+	Parameter CLALL2 bound to: 16'b0000000000000100 
+	Parameter MVMARTR1 bound to: 16'b0000000000000101 
+	Parameter MVMARTR2 bound to: 16'b0000000000000110 
+	Parameter MVMARTR3 bound to: 16'b0000000000000111 
+	Parameter LDAC1 bound to: 16'b0000000000001000 
+	Parameter LDAC2 bound to: 16'b0000000000001001 
+	Parameter LDAC3 bound to: 16'b0000000000001010 
+	Parameter MVACR1 bound to: 16'b0000000000001011 
+	Parameter MVACR2 bound to: 16'b0000000000001100 
+	Parameter MVACR3 bound to: 16'b0000000000001101 
+	Parameter MARINC1 bound to: 16'b0000000000001110 
+	Parameter MUL1 bound to: 16'b0000000000001111 
+	Parameter MUL2 bound to: 16'b0000000000010000 
+	Parameter MUL3 bound to: 16'b0000000000010001 
+	Parameter ADD1 bound to: 16'b0000000000010010 
+	Parameter ADD2 bound to: 16'b0000000000010011 
+	Parameter ADD3 bound to: 16'b0000000000010100 
+	Parameter ADD4 bound to: 16'b0000000000010101 
+	Parameter ADDMAR1 bound to: 16'b0000000000010110 
+	Parameter ADDMAR2 bound to: 16'b0000000000010111 
+	Parameter ADDMAR3 bound to: 16'b0000000000011000 
+	Parameter DIV1 bound to: 16'b0000000000011001 
+	Parameter DIV2 bound to: 16'b0000000000011010 
+	Parameter DIV3 bound to: 16'b0000000000011011 
+	Parameter STTR1 bound to: 16'b0000000000011100 
+	Parameter SUB1 bound to: 16'b0000000000011101 
+	Parameter SUB2 bound to: 16'b0000000000011110 
+	Parameter SUB3 bound to: 16'b0000000000011111 
+	Parameter INCR2 bound to: 16'b0000000000100000 
+	Parameter JUMP1 bound to: 16'b0000000000100001 
+	Parameter JUMP2 bound to: 16'b0000000000100010 
+	Parameter JUMP3 bound to: 16'b0000000000100011 
+	Parameter INCR3 bound to: 16'b0000000000100100 
+	Parameter JMPNXT1 bound to: 16'b0000000000100101 
+	Parameter JMPNXT2 bound to: 16'b0000000000100110 
+	Parameter JMPNXT3 bound to: 16'b0000000000100111 
+	Parameter NOP bound to: 16'b0000000000101000 
+	Parameter END bound to: 16'b0000000000101001 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:77]
+INFO: [Synth 8-256] done synthesizing module 'Control_Unit' (12#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:1]
+INFO: [Synth 8-638] synthesizing module 'AC_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
+INFO: [Synth 8-4471] merging register 'd_out_reg[15:0]' into 'd_write_reg[15:0]' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:15]
+WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:15]
+INFO: [Synth 8-256] done synthesizing module 'AC_Reg' (13#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'R16_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'R16_bit' (14#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:1]
+INFO: [Synth 8-638] synthesizing module 'R16_bit_inc' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:1]
+INFO: [Synth 8-256] done synthesizing module 'R16_bit_inc' (15#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:1]
+INFO: [Synth 8-638] synthesizing module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:23]
+INFO: [Synth 8-256] done synthesizing module 'R8_bit' (16#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:23]
+WARNING: [Synth 8-689] width (16) of port connection 'clk' does not match port width (1) of module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:165]
+WARNING: [Synth 8-689] width (16) of port connection 'd_in' does not match port width (8) of module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:166]
+WARNING: [Synth 8-689] width (1) of port connection 'd_out' does not match port width (8) of module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:167]
+INFO: [Synth 8-638] synthesizing module 'MAR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:23]
+INFO: [Synth 8-256] done synthesizing module 'MAR_Reg' (17#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:23]
+INFO: [Synth 8-638] synthesizing module 'IR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:23]
+INFO: [Synth 8-256] done synthesizing module 'IR_Reg' (18#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'i_out' does not match port width (16) of module 'IR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:185]
+WARNING: [Synth 8-689] width (16) of port connection 'clk' does not match port width (1) of module 'IR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:186]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net com_done with 1st driver pin 'processor:/rx/com_done' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net com_done with 2nd driver pin 'GND' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net com_done is connected to constant driver, other driver is ignored [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+WARNING: [Synth 8-3848] Net ir_to_cu in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:33]
+WARNING: [Synth 8-3848] Net address_wire in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:23]
+WARNING: [Synth 8-3848] Net from_r1 in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_r2 in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_r3 in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_ac in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_ir in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_pc in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+WARNING: [Synth 8-3848] Net from_mar in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:25]
+INFO: [Synth 8-256] done synthesizing module 'processor' (19#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+WARNING: [Synth 8-3917] design processor has port com_done driven by constant 0
+WARNING: [Synth 8-3331] design C_Bus has unconnected port clk
+WARNING: [Synth 8-3331] design UART_RX has unconnected port switch
+WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 357.484 ; gain = 115.145
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[11] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[10] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[9] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[8] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r1[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r2[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:r3[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[11] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[10] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[9] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[8] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ac[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[11] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[10] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[9] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[8] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:ir[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[11] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[10] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[9] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[8] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:pc[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[11] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[10] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[9] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[8] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[7] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busA:mar[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:55]
+WARNING: [Synth 8-3295] tying undriven pin busB:Bus_in[15] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:68]
+WARNING: [Synth 8-3295] tying undriven pin busB:Bus_in[14] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:68]
+WARNING: [Synth 8-3295] tying undriven pin busB:Bus_in[13] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:68]
+WARNING: [Synth 8-3295] tying undriven pin busB:Bus_in[12] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:68]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 357.484 ; gain = 115.145
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-4104-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-4104-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.134 . Memory (MB): peak = 658.695 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for dram/DRAM_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for dram/DRAM_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:24 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_RX'
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+INFO: [Synth 8-5544] ROM "com_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "index" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wae" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:133]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:16]
+INFO: [Synth 8-5546] ROM "mar" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "pc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tem" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r3" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ac" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iram" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "r2_flag" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fetch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "processing_over_light" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:34]
+WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                            00001 |                              000
+                   START |                            00010 |                              001
+                 DATA_RX |                            00100 |                              010
+                    STOP |                            01000 |                              011
+                 CLEANUP |                            10000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'UART_RX'
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+WARNING: [Synth 8-327] inferring latch for variable 'Bus_out_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:30]
+WARNING: [Synth 8-327] inferring latch for variable 'mar_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:10]
+WARNING: [Synth 8-327] inferring latch for variable 'pc_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:11]
+WARNING: [Synth 8-327] inferring latch for variable 'tem_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:12]
+WARNING: [Synth 8-327] inferring latch for variable 'r3_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:13]
+WARNING: [Synth 8-327] inferring latch for variable 'r2_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:14]
+WARNING: [Synth 8-327] inferring latch for variable 'r1_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:15]
+WARNING: [Synth 8-327] inferring latch for variable 'ac_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:16]
+WARNING: [Synth 8-327] inferring latch for variable 'C_bus_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:11]
+WARNING: [Synth 8-327] inferring latch for variable 'r2_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:22]
+WARNING: [Synth 8-327] inferring latch for variable 'r3_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:28]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               33 Bit    Registers := 1     
+	               16 Bit    Registers := 10    
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+	   5 Input     33 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 3     
+	   5 Input     16 Bit        Muxes := 2     
+	  43 Input     16 Bit        Muxes := 1     
+	  42 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	  11 Input      5 Bit        Muxes := 1     
+	  42 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	  42 Input      3 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 7     
+	   8 Input      1 Bit        Muxes := 7     
+	  10 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 10    
+	  42 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module UART_RX 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               33 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 1     
+	   5 Input     33 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 2     
+	  11 Input      5 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   5 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 7     
+Module Baud_gen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module C_Bus 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      1 Bit        Muxes := 7     
+Module IRAM 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	  43 Input     16 Bit        Muxes := 1     
+Module Memory_Control 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 2     
+Module Control_Unit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  42 Input     16 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	  42 Input      4 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	  42 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	  42 Input      1 Bit        Muxes := 8     
+Module AC_Reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module R16_bit 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module R8_bit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module MAR_Reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module IR_Reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element rx/data_2byte_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:31]
+WARNING: [Synth 8-6014] Unused sequential element rx/index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:133]
+WARNING: [Synth 8-3936] Found unconnected internal register 'mem_con/d_out_reg' and it is trimmed from '16' to '1' bits. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:38]
+INFO: [Synth 8-5546] ROM "busC/mar" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/pc" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/tem" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/r3" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/r2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/r1" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "busC/ac" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "alu/r2_flag" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element baud/counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:16]
+WARNING: [Synth 8-3917] design processor has port com_done driven by constant 0
+WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
+WARNING: [Synth 8-3331] design processor has unconnected port switch
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r3_flag_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r2_flag_reg )
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[12]' (FDE_1) to 'cu/NS_reg[15]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[11]' (FDE_1) to 'cu/NS_reg[15]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[13]' (FDE_1) to 'cu/NS_reg[15]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[15]' (FDE_1) to 'cu/NS_reg[14]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[14]' (FDE_1) to 'cu/NS_reg[10]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[6]' (FDE_1) to 'cu/NS_reg[10]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[7]' (FDE_1) to 'cu/NS_reg[10]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[8]' (FDE_1) to 'cu/NS_reg[10]'
+INFO: [Synth 8-3886] merging instance 'cu/NS_reg[10]' (FDE_1) to 'cu/NS_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/NS_reg[9] )
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[12]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[11]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[13]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[15]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[14]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[6]' (FD_1) to 'cu/PS_reg[7]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[7]' (FD_1) to 'cu/PS_reg[8]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[8]' (FD_1) to 'cu/PS_reg[9]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[10]' (FD_1) to 'cu/PS_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/PS_reg[9] )
+WARNING: [Synth 8-3332] Sequential element (rx/com_done_reg) is unused and will be removed from module processor.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net com_done with 1st driver pin 'rx/com_done_reg/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:149]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net com_done with 2nd driver pin 'GND' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:149]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net com_done is connected to constant driver, other driver is ignored [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:149]
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/mar_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/pc_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/tem_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r3_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r2_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[5]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[4]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[3]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[2]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[1]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/r1_reg[0]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[15]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[14]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[13]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[12]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[11]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[10]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[9]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[8]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[7]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[6]) is unused and will be removed from module processor.
+WARNING: [Synth 8-3332] Sequential element (busC/ac_reg[5]) is unused and will be removed from module processor.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[0]' (LD) to 'busB/Bus_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[1]' (LD) to 'busB/Bus_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[2]' (LD) to 'busB/Bus_out_reg[3]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[3]' (LD) to 'busB/Bus_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[4]' (LD) to 'busB/Bus_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[5]' (LD) to 'busB/Bus_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[6]' (LD) to 'busB/Bus_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[7]' (LD) to 'busB/Bus_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[8]' (LD) to 'busB/Bus_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[9]' (LD) to 'busB/Bus_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[10]' (LD) to 'busB/Bus_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[11]' (LD) to 'busB/Bus_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[12]' (LD) to 'busB/Bus_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[13]' (LD) to 'busB/Bus_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'busB/Bus_out_reg[14]' (LD) to 'busB/Bus_out_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\busB/Bus_out_reg[15] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:28 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:40 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:40 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/processing_over_light_reg )
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:41 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-3352] multi-driven net clk with 1st driver pin 'IR/i_out_reg[0]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:28]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net clk with 2nd driver pin 'baud/out_reg/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:12]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 1st driver pin 'i_264/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 2nd driver pin 'AC/d_write_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 3rd driver pin 'R1/d_out_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 4th driver pin 'TEM/d_out_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 5th driver pin 'MAR/address_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 6th driver pin 'R2/d_out_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 7th driver pin 'PC/d_out_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[15] with 8th driver pin 'MAR/d_out_reg[15]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 1st driver pin 'i_263/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 2nd driver pin 'AC/d_write_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 3rd driver pin 'R1/d_out_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 4th driver pin 'TEM/d_out_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 5th driver pin 'MAR/address_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 6th driver pin 'R2/d_out_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 7th driver pin 'PC/d_out_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[14] with 8th driver pin 'MAR/d_out_reg[14]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 1st driver pin 'i_262/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 2nd driver pin 'AC/d_write_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 3rd driver pin 'R1/d_out_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 4th driver pin 'TEM/d_out_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 5th driver pin 'MAR/address_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 6th driver pin 'R2/d_out_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 7th driver pin 'PC/d_out_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[13] with 8th driver pin 'MAR/d_out_reg[13]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 1st driver pin 'i_261/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 2nd driver pin 'AC/d_write_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 3rd driver pin 'R1/d_out_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 4th driver pin 'TEM/d_out_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 5th driver pin 'MAR/address_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 6th driver pin 'R2/d_out_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 7th driver pin 'PC/d_out_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[12] with 8th driver pin 'MAR/d_out_reg[12]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 1st driver pin 'i_260/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 2nd driver pin 'AC/d_write_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 3rd driver pin 'R1/d_out_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 4th driver pin 'TEM/d_out_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 5th driver pin 'MAR/address_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 6th driver pin 'R2/d_out_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 7th driver pin 'PC/d_out_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[11] with 8th driver pin 'MAR/d_out_reg[11]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 1st driver pin 'i_259/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 2nd driver pin 'AC/d_write_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 3rd driver pin 'R1/d_out_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 4th driver pin 'TEM/d_out_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 5th driver pin 'MAR/address_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 6th driver pin 'R2/d_out_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 7th driver pin 'PC/d_out_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[10] with 8th driver pin 'MAR/d_out_reg[10]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 1st driver pin 'i_258/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 2nd driver pin 'AC/d_write_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 3rd driver pin 'R1/d_out_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 4th driver pin 'TEM/d_out_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 5th driver pin 'MAR/address_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 6th driver pin 'R2/d_out_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 7th driver pin 'PC/d_out_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[9] with 8th driver pin 'MAR/d_out_reg[9]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 1st driver pin 'i_257/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 2nd driver pin 'AC/d_write_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 3rd driver pin 'R1/d_out_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 4th driver pin 'TEM/d_out_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 5th driver pin 'MAR/address_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 6th driver pin 'R2/d_out_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 7th driver pin 'PC/d_out_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data1[8] with 8th driver pin 'MAR/d_out_reg[8]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 1st driver pin 'i_256/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 2nd driver pin 'MAR/d_out_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 3rd driver pin 'PC/d_out_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 4th driver pin 'R2/d_out_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 5th driver pin 'MAR/address_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 6th driver pin 'TEM/d_out_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 7th driver pin 'R1/d_out_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[7] with 8th driver pin 'AC/d_write_reg[7]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 1st driver pin 'i_255/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 2nd driver pin 'MAR/d_out_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 3rd driver pin 'PC/d_out_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 4th driver pin 'R2/d_out_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 5th driver pin 'MAR/address_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 6th driver pin 'TEM/d_out_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 7th driver pin 'R1/d_out_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[6] with 8th driver pin 'AC/d_write_reg[6]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 1st driver pin 'i_254/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 2nd driver pin 'MAR/d_out_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 3rd driver pin 'PC/d_out_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 4th driver pin 'R2/d_out_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 5th driver pin 'MAR/address_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 6th driver pin 'TEM/d_out_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 7th driver pin 'R1/d_out_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[5] with 8th driver pin 'AC/d_write_reg[5]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:14]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 1st driver pin 'i_253/O' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 2nd driver pin 'MAR/d_out_reg[4]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:31]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 3rd driver pin 'PC/d_out_reg[4]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 4th driver pin 'R2/d_out_reg[4]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 5th driver pin 'MAR/address_reg[4]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:32]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net data5[4] with 6th driver pin 'TEM/d_out_reg[4]/Q' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:8]
+INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|       17|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+---------------------+----------+
+|      |BlackBox name        |Instances |
++------+---------------------+----------+
+|1     |DRAM_blk_mem_gen_0_0 |         1|
++------+---------------------+----------+
+
+Report Cell Usage: 
++------+---------------------+------+
+|      |Cell                 |Count |
++------+---------------------+------+
+|1     |DRAM_blk_mem_gen_0_0 |     1|
+|2     |BUFG                 |     1|
+|3     |CARRY4               |    26|
+|4     |LUT1                 |    49|
+|5     |LUT2                 |     5|
+|6     |LUT3                 |    61|
+|7     |LUT4                 |    37|
+|8     |LUT5                 |    35|
+|9     |LUT6                 |    62|
+|10    |FDRE                 |   218|
+|11    |LD                   |    16|
+|12    |IBUF                 |     4|
+|13    |OBUF                 |     4|
++------+---------------------+------+
+
+Report Instance Areas: 
++------+-----------+---------------+------+
+|      |Instance   |Module         |Cells |
++------+-----------+---------------+------+
+|1     |top        |               |   534|
+|2     |  AC       |AC_Reg         |    16|
+|3     |  IR       |IR_Reg         |     1|
+|4     |  MAR      |MAR_Reg        |    32|
+|5     |  PC       |R16_bit_inc    |    16|
+|6     |  R1       |R16_bit        |    16|
+|7     |  R2       |R16_bit_inc_0  |    16|
+|8     |  TEM      |R16_bit_1      |    16|
+|9     |  alu      |ALU            |    45|
+|10    |  baud     |Baud_gen       |    22|
+|11    |  cu       |Control_Unit   |   150|
+|12    |  dram     |DRAM_wrapper   |    16|
+|13    |    DRAM_i |DRAM           |    16|
+|14    |  iram     |IRAM           |     1|
+|15    |  mem_con  |Memory_Control |    36|
+|16    |  rx       |UART_RX        |   142|
++------+-----------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 133 critical warnings and 180 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:29 . Memory (MB): peak = 658.695 ; gain = 115.145
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:42 . Memory (MB): peak = 658.695 ; gain = 416.355
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 46 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  LD => LDCE: 16 instances
+
+125 Infos, 254 Warnings, 102 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:49 . Memory (MB): peak = 658.695 ; gain = 421.891
+INFO: [Common 17-1381] The checkpoint 'D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.172 . Memory (MB): peak = 658.695 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jul  4 22:46:17 2017...

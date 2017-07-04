@@ -72,11 +72,11 @@ module Control_Unit
 
     reg [15:0] PS,NS = FETCH1;
     
-    always @(negedge clk or PS) begin
+    always @(negedge clk ) begin
         PS<=NS;
         case (PS)
             FETCH1 : begin 
-            fetch<=1;
+                        fetch<=1;
                         d_ram<=0; //write to the DRAM
                         B_bus<=0;
                         ALU_control <= 4'b0000;
@@ -601,7 +601,7 @@ module Control_Unit
                            r3_inc <=0;             
                            NS<= FETCH1;             
                     end   
-                  END: begin
+            END: begin
                   processing_over_light <=1;
                   end                                                                                     
              endcase

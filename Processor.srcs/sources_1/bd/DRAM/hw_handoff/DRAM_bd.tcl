@@ -155,11 +155,11 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set addra [ create_bd_port -dir I -from 31 -to 0 addra ]
+  set addra [ create_bd_port -dir I -from 15 -to 0 addra ]
   set clka [ create_bd_port -dir I -type clk clka ]
-  set dina [ create_bd_port -dir I -from 31 -to 0 dina ]
+  set dina [ create_bd_port -dir I -from 15 -to 0 dina ]
   set douta [ create_bd_port -dir O -from 15 -to 0 douta ]
-  set wea [ create_bd_port -dir I -from 3 -to 0 wea ]
+  set wea [ create_bd_port -dir I -from 0 -to 0 wea ]
 
   # Create instance: blk_mem_gen_0, and set properties
   set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.3 blk_mem_gen_0 ]
