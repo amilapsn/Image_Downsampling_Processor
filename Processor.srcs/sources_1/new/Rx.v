@@ -31,7 +31,7 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
 	assign rx_byte = data_2byte;
 	assign rx_done = rxdone;
 	
-	always @(posedge clk)
+	always@(posedge clk)
 		begin
 			case(state)
 				

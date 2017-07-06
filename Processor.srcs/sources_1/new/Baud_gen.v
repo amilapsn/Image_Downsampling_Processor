@@ -1,7 +1,7 @@
 // this is to change the clock rate to a desired level 
 module Baud_gen(
 	 input clk_in,// actual clock 115MHz
-    output clk_out
+    output wire clk_out
     );
 	
 	parameter FACTOR = 4;// clk_out = clk_in/FACTOR
@@ -11,7 +11,7 @@ module Baud_gen(
 	
 	assign clk_out = out;
 	
-	always @(posedge clk_in) begin
+	always@(posedge clk_in) begin
 				
 		if(counter < FACTOR - 1) begin
 			counter <= counter + 1;

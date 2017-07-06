@@ -9,7 +9,7 @@ module processor
      switch,
      rx_done,
      com_done,
-     processing_over_light); 
+     process_over_led); 
      
     wire wea;
     wire [15:0] rx_byte, index;
@@ -17,13 +17,13 @@ module processor
     input RX;
     input MEMORY_ON,Data_in_Control,Data_out_Control;
     input actual_clk;
-    output rx_done, com_done,processing_over_light;
+    output rx_done, com_done,process_over_led;
     output Tx;
     wire clk;
     wire [15:0] Abus,Bbus,Cbus,DRAM_wire,address_wire,ac_to_memory,mem_in,mem_out;
     wire [15:0] to_mar,to_tr,to_r1,to_r2,to_ac,to_pc;
-    wire [15:0] from_mar,from_ir,from_tr,from_r1,from_r2,from_r3,from_ac,from_pc;
-    wire [7:0] to_r3;
+    wire [15:0] from_mar,from_ir,from_tr,from_r1,from_ac,from_pc;
+    wire [7:0] to_r3,from_r2,from_r3;
     wire [3:0] ALU_control;
     wire [6:0] C_control;
     wire [2:0] A_control;
@@ -31,7 +31,6 @@ module processor
     wire pc_inc,mar_inc,r2_inc,r3_inc;
     wire d_ram_write,fetch_enable;
     wire [15:0]ir_to_cu,iram_to_ir;
-    wire com_done=0;
     /*reg indicator;*///dunno what's this for may be a light to indicate com finished
 
     //rx module
@@ -80,8 +79,7 @@ module processor
          to_r1,
          to_ac,
          C_control,
-         Cbus,
-         clk);
+         Cbus);
 
     //IRAM
     IRAM iram 
@@ -137,7 +135,7 @@ module processor
          r2_inc,
          r3_inc,
          clk,
-         processing_over_light);
+         process_over_led);
     
     AC_Reg AC 
         (clk,
@@ -182,8 +180,8 @@ module processor
          
     IR_Reg IR
         (iram_to_ir,
-         clk,
-         ir_to_cu);
+         ir_to_cu,
+         clk);
 
 endmodule
 

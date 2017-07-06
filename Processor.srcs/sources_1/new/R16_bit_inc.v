@@ -3,7 +3,7 @@ input inc,clk;
 input [15:0] d_in;
 output reg [15:0] d_out;
 
-always @(posedge clk)
+always@(posedge clk)
 begin
     //if (load)
     d_out <= d_in;

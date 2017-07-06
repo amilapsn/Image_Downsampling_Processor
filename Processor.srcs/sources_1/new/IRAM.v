@@ -73,7 +73,7 @@ initial begin
     iram[41]=16'b0000000000101001;
 end
 
-always @(posedge clk) begin
+always@(posedge clk) begin
     if (fetch_enable)
         i_out <= iram[i_address];
 end

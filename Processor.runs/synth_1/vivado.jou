@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Tue Jul  4 22:45:19 2017
-# Process ID: 4104
+# Start of session at: Thu Jul  6 11:38:15 2017
+# Process ID: 6304
 # Current directory: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1
 # Command line: vivado.exe -log processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source processor.tcl
 # Log file: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.vds

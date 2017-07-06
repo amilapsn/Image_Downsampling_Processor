@@ -7,13 +7,15 @@ module Control_Unit
      B_bus,
      d_ram/*data ram write*/,
      fetch,
-     load,
+     load,// C_control
      pc_inc,
      mar_inc,
      r2_inc,
      r3_inc,
      clk,
-     processing_over_light);
+     process_over_led);
+     
+     
      
     input [15:0]    ir;
     input           clk;
@@ -23,7 +25,7 @@ module Control_Unit
     output reg B_bus,d_ram,fetch;
     output reg [6:0] load;
     output reg pc_inc,mar_inc,r2_inc,r3_inc;
-    output reg processing_over_light=0;//assing this ti led
+    output reg process_over_led=0;//assing this ti led
 
 
     parameter 
@@ -72,7 +74,7 @@ module Control_Unit
 
     reg [15:0] PS,NS = FETCH1;
     
-    always @(negedge clk ) begin
+    always@(negedge clk ) begin
         PS<=NS;
         case (PS)
             FETCH1 : begin 
@@ -602,8 +604,23 @@ module Control_Unit
                            NS<= FETCH1;             
                     end   
             END: begin
-                  processing_over_light <=1;
-                  end                                                                                     
+                  process_over_led <=1;
+                  end  
+            default:
+                        begin                             
+                           fetch<=0;               
+                           d_ram<=0;               
+                           B_bus<=0;               
+                           ALU_control <= 4'b0000; 
+                           A_bus<= 3'b000;         
+                          load <= 7'b0000000;     
+                          pc_inc <= 0;            
+                          mar_inc<=0;             
+                          r2_inc <=0;             
+                          r3_inc <=0;             
+                          NS<= FETCH1;             
+                                      end   
+                                                                                                       
              endcase
     end
 endmodule                                                                                                                                                                                                                                                                                               

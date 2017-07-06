@@ -27,7 +27,7 @@ module MAR_Reg(
     output reg [15:0]d_out,
     output reg[15:0]address
     );
-always @(posedge clk) begin
+always@(posedge clk) begin
     d_out <= d_in;
     address <= d_in;
     if (inc)

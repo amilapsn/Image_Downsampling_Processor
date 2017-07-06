@@ -28,7 +28,7 @@ module R8_bit(
     );
 
     
-always @(posedge clk)
+always@(posedge clk)
 begin
     //if (load)
      d_out <= d_in;

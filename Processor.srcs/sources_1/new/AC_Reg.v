@@ -8,7 +8,7 @@ module AC_Reg(
     output reg [15:0] d_out,
     output reg [15:0] d_write
     );
-always @(posedge clk) begin
+always@(posedge clk) begin
     //if (load) begin
         //d_out <= d_in;
     d_write <= d_in;
