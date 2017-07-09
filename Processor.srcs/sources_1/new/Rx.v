@@ -19,9 +19,9 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
 	
 	parameter IDLE 	= 3'b000;
 	parameter START 	= 3'b001;
-	parameter DATA_RX = 3'b010;
+	parameter DATA_RX  = 3'b010;
 	parameter STOP 	= 3'b011;
-	parameter CLEANUP = 3'b100;
+	parameter CLEANUP  = 3'b100;
 	
 	parameter DELAY = 1;	// delay 8680 clock cycles
 	parameter END =3'b101;

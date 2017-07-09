@@ -11,7 +11,7 @@ module processor
      com_done,
      process_over_led); 
      
-    wire wea;
+    wire wea,ac_enable, r1_enable, tem_enable, r2_enable, r3_enable, pc_enable, mar_enable, ir_enable;
     wire [15:0] rx_byte, index;
     input switch;// assign this to a switch in the board
     input RX;
@@ -21,8 +21,8 @@ module processor
     output Tx;
     wire clk;
     wire [15:0] Abus,Bbus,Cbus,DRAM_wire,address_wire,ac_to_memory,mem_in,mem_out;
-    wire [15:0] to_mar,to_tr,to_r1,to_r2,to_ac,to_pc;
-    wire [15:0] from_mar,from_ir,from_tr,from_r1,from_ac,from_pc;
+    wire [15:0] to_mar,to_tem,to_r1,to_r2,to_ac,to_pc;
+    wire [15:0] from_mar,from_tem,from_tr,from_r1,from_ac,from_pc;
     wire [7:0] to_r3,from_r2,from_r3;
     wire [3:0] ALU_control;
     wire [6:0] C_control;
@@ -57,7 +57,7 @@ module processor
          from_r2,
          from_r3,
          from_ac,
-         from_ir,
+         from_tem,
          from_pc,
          from_mar,
          DRAM_wire,
@@ -73,7 +73,7 @@ module processor
     C_Bus busC
         (to_mar,
          to_pc,
-         to_tr,
+         to_tem,
          to_r3,
          to_r2,
          to_r1,
@@ -129,56 +129,69 @@ module processor
          B_control,
          d_ram_write,
          fetch_enable,
-         C_control,
          pc_inc,
          mar_inc,
          r2_inc,
          r3_inc,
          clk,
-         process_over_led);
+         process_over_led,
+         ac_enable,
+         r1_enable,
+         tem_enable,
+         r2_enable,
+         r3_enable,
+         pc_enable,
+         mar_enable);
     
     AC_Reg AC 
         (clk,
-         Cbus,
-         Abus,
-         ac_to_memory);
+         to_ac,
+         from_ac,
+         ac_to_memory,
+         ac_enable);
          
     R16_bit R1
-        (Cbus,
-         Abus,
-         clk);
+        (to_r1,
+         from_r1,
+         clk,
+         r1_enable);
 
     R16_bit TEM
-        (Cbus,
-         Abus,
-         clk);
+        (to_tem,
+         from_tem,
+         clk,
+         tem_enable);
          
-    R16_bit_inc R2
-        (Cbus,
-         Abus,
+    R8_bit R2
+        (to_r2,
+         from_r2,
          r2_inc,
-         clk);
+         clk,
+         r2_enable);
          
     R8_bit R3
-        (Cbus,
-         Abus,
+        (to_r3,
+         from_r3,
          r3_inc,
-         clk);
+         clk,
+         r3_enable);
          
     R16_bit_inc PC
-        (Cbus,
-         Abus,
+        (to_pc,
+         from_pc,
          pc_inc,
-         clk);
+         clk,
+         pc_enable);
          
     MAR_Reg MAR
         (clk,
          mar_inc,
-         Cbus,
-         Abus,
-         ac_to_memory);
+         to_mar,
+         from_mar,
+         address_wire,
+         mar_enable);
          
-    IR_Reg IR
+    IR_Reg IR//to abus?
         (iram_to_ir,
          ir_to_cu,
          clk);

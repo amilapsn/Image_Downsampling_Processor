@@ -3,6 +3,7 @@ input [6:0] c_control;
 input [15:0] d_in;
 output reg [15:0] mar,pc,tem,r2,r1,ac;
 output reg [15:0] r3;
+integer a=1;
 
 always@(c_control)
     case(c_control)
@@ -14,6 +15,6 @@ always@(c_control)
         7'b0010000 : r2 <= d_in;
         7'b0100000 : r1 <= d_in;
         7'b1000000 : ac <= d_in;
-        default    : ;
+        default    : a=0;
     endcase
 endmodule

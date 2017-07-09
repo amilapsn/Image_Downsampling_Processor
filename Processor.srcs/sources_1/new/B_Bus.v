@@ -27,6 +27,6 @@ output reg [15:0] Bus_out;
 
 always@(B_control) begin
     if (B_control==1)
-        Bus_out=Bus_in;
+        Bus_out<=Bus_in;
 end
 endmodule

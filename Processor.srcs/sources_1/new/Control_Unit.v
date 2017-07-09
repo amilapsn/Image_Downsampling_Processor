@@ -7,13 +7,20 @@ module Control_Unit
      B_bus,
      d_ram/*data ram write*/,
      fetch,
-     load,// C_control
+     //load,// C_control
      pc_inc,
      mar_inc,
      r2_inc,
      r3_inc,
      clk,
-     process_over_led);
+     process_over_led,
+     ac_enable,
+     r1_enable,
+     tem_enable,
+     r2_enable,
+     r3_enable,
+     pc_enable,
+     mar_enable);
      
      
      
@@ -23,9 +30,10 @@ module Control_Unit
     output reg [3:0] ALU_control;
     output reg [2:0] A_bus;
     output reg B_bus,d_ram,fetch;
-    output reg [6:0] load;
+    reg [6:0] load;
     output reg pc_inc,mar_inc,r2_inc,r3_inc;
-    output reg process_over_led=0;//assing this ti led
+    output wire ac_enable, r1_enable, tem_enable, r2_enable, r3_enable, pc_enable, mar_enable;
+    output reg process_over_led=0;//passing this to led
 
 
     parameter 
@@ -73,7 +81,7 @@ module Control_Unit
 
 
     reg [15:0] PS,NS = FETCH1;
-    
+    assign {ac_enable, r1_enable,r2_enable, r3_enable, tem_enable,pc_enable,mar_enable}=load ;
     always@(negedge clk ) begin
         PS<=NS;
         case (PS)
@@ -102,6 +110,7 @@ module Control_Unit
                         r2_inc <=0;
                         r3_inc <=0;
                         NS<= ir;
+                        
                     end
             CLALL1 : begin
                         fetch<=0;
