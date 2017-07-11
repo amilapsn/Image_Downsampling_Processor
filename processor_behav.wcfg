@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="processor_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="processor" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2333333333fs"></ZoomStartTime>
+      <ZoomEndTime time="4333333334fs"></ZoomEndTime>
+      <Cursor1Time time="4000000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="246"></NameColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="62" />
+   <wvobject fp_name="/processor/switch" type="logic">
+      <obj_property name="ElementShortName">switch</obj_property>
+      <obj_property name="ObjectShortName">switch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/actual_clk" type="logic">
+      <obj_property name="ElementShortName">actual_clk</obj_property>
+      <obj_property name="ObjectShortName">actual_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/cu/PS" type="array">
+      <obj_property name="ElementShortName">PS[15:0]</obj_property>
+      <obj_property name="ObjectShortName">PS[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/PC/d_out" type="array">
+      <obj_property name="ElementShortName">d_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/fetch_enable" type="logic">
+      <obj_property name="ElementShortName">fetch_enable</obj_property>
+      <obj_property name="ObjectShortName">fetch_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/pc_inc" type="logic">
+      <obj_property name="ElementShortName">pc_inc</obj_property>
+      <obj_property name="ObjectShortName">pc_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Data_in_Control" type="logic">
+      <obj_property name="ElementShortName">Data_in_Control</obj_property>
+      <obj_property name="ObjectShortName">Data_in_Control</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Data_out_Control" type="logic">
+      <obj_property name="ElementShortName">Data_out_Control</obj_property>
+      <obj_property name="ObjectShortName">Data_out_Control</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Abus" type="array">
+      <obj_property name="ElementShortName">Abus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Abus[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Bbus" type="array">
+      <obj_property name="ElementShortName">Bbus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Bbus[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Cbus" type="array">
+      <obj_property name="ElementShortName">Cbus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Cbus[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/wea" type="logic">
+      <obj_property name="ElementShortName">wea</obj_property>
+      <obj_property name="ObjectShortName">wea</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/ac_enable" type="logic">
+      <obj_property name="ElementShortName">ac_enable</obj_property>
+      <obj_property name="ObjectShortName">ac_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/r1_enable" type="logic">
+      <obj_property name="ElementShortName">r1_enable</obj_property>
+      <obj_property name="ObjectShortName">r1_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/tem_enable" type="logic">
+      <obj_property name="ElementShortName">tem_enable</obj_property>
+      <obj_property name="ObjectShortName">tem_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/r2_enable" type="logic">
+      <obj_property name="ElementShortName">r2_enable</obj_property>
+      <obj_property name="ObjectShortName">r2_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/r3_enable" type="logic">
+      <obj_property name="ElementShortName">r3_enable</obj_property>
+      <obj_property name="ObjectShortName">r3_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/pc_enable" type="logic">
+      <obj_property name="ElementShortName">pc_enable</obj_property>
+      <obj_property name="ObjectShortName">pc_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/mar_enable" type="logic">
+      <obj_property name="ElementShortName">mar_enable</obj_property>
+      <obj_property name="ObjectShortName">mar_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/ir_enable" type="logic">
+      <obj_property name="ElementShortName">ir_enable</obj_property>
+      <obj_property name="ObjectShortName">ir_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/rx_byte" type="array">
+      <obj_property name="ElementShortName">rx_byte[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_byte[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/index" type="array">
+      <obj_property name="ElementShortName">index[15:0]</obj_property>
+      <obj_property name="ObjectShortName">index[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/RX" type="logic">
+      <obj_property name="ElementShortName">RX</obj_property>
+      <obj_property name="ObjectShortName">RX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/data_2byte" type="array">
+      <obj_property name="ElementShortName">data_2byte[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_2byte[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/MEMORY_ON" type="logic">
+      <obj_property name="ElementShortName">MEMORY_ON</obj_property>
+      <obj_property name="ObjectShortName">MEMORY_ON</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/rx_done" type="logic">
+      <obj_property name="ElementShortName">rx_done</obj_property>
+      <obj_property name="ObjectShortName">rx_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/com_done" type="logic">
+      <obj_property name="ElementShortName">com_done</obj_property>
+      <obj_property name="ObjectShortName">com_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/process_over_led" type="logic">
+      <obj_property name="ElementShortName">process_over_led</obj_property>
+      <obj_property name="ObjectShortName">process_over_led</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/Tx" type="array">
+      <obj_property name="ElementShortName">Tx[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Tx[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/DRAM_wire" type="array">
+      <obj_property name="ElementShortName">DRAM_wire[15:0]</obj_property>
+      <obj_property name="ObjectShortName">DRAM_wire[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/address_wire" type="array">
+      <obj_property name="ElementShortName">address_wire[15:0]</obj_property>
+      <obj_property name="ObjectShortName">address_wire[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/ac_to_memory" type="array">
+      <obj_property name="ElementShortName">ac_to_memory[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ac_to_memory[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/mem_in" type="array">
+      <obj_property name="ElementShortName">mem_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_in[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/mem_out" type="array">
+      <obj_property name="ElementShortName">mem_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_mar" type="array">
+      <obj_property name="ElementShortName">to_mar[15:0]</obj_property>
+      <obj_property name="ObjectShortName">to_mar[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_tem" type="array">
+      <obj_property name="ElementShortName">to_tem[15:0]</obj_property>
+      <obj_property name="ObjectShortName">to_tem[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_r1" type="array">
+      <obj_property name="ElementShortName">to_r1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">to_r1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_ac" type="array">
+      <obj_property name="ElementShortName">to_ac[15:0]</obj_property>
+      <obj_property name="ObjectShortName">to_ac[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_pc" type="array">
+      <obj_property name="ElementShortName">to_pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">to_pc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_mar" type="array">
+      <obj_property name="ElementShortName">from_mar[15:0]</obj_property>
+      <obj_property name="ObjectShortName">from_mar[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_tem" type="array">
+      <obj_property name="ElementShortName">from_tem[15:0]</obj_property>
+      <obj_property name="ObjectShortName">from_tem[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_r1" type="array">
+      <obj_property name="ElementShortName">from_r1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">from_r1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_ac" type="array">
+      <obj_property name="ElementShortName">from_ac[15:0]</obj_property>
+      <obj_property name="ObjectShortName">from_ac[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_pc" type="array">
+      <obj_property name="ElementShortName">from_pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">from_pc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_r3" type="array">
+      <obj_property name="ElementShortName">to_r3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">to_r3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/to_r2" type="array">
+      <obj_property name="ElementShortName">to_r2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">to_r2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_r2" type="array">
+      <obj_property name="ElementShortName">from_r2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">from_r2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/from_r3" type="array">
+      <obj_property name="ElementShortName">from_r3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">from_r3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/ALU_control" type="array">
+      <obj_property name="ElementShortName">ALU_control[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_control[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/C_control" type="array">
+      <obj_property name="ElementShortName">C_control[6:0]</obj_property>
+      <obj_property name="ObjectShortName">C_control[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/A_control" type="array">
+      <obj_property name="ElementShortName">A_control[2:0]</obj_property>
+      <obj_property name="ObjectShortName">A_control[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/alu_r2_flag" type="logic">
+      <obj_property name="ElementShortName">alu_r2_flag</obj_property>
+      <obj_property name="ObjectShortName">alu_r2_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/alu_r3_flag" type="logic">
+      <obj_property name="ElementShortName">alu_r3_flag</obj_property>
+      <obj_property name="ObjectShortName">alu_r3_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/z_flag" type="logic">
+      <obj_property name="ElementShortName">z_flag</obj_property>
+      <obj_property name="ObjectShortName">z_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/B_control" type="logic">
+      <obj_property name="ElementShortName">B_control</obj_property>
+      <obj_property name="ObjectShortName">B_control</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/mar_inc" type="logic">
+      <obj_property name="ElementShortName">mar_inc</obj_property>
+      <obj_property name="ObjectShortName">mar_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/r2_inc" type="logic">
+      <obj_property name="ElementShortName">r2_inc</obj_property>
+      <obj_property name="ObjectShortName">r2_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/r3_inc" type="logic">
+      <obj_property name="ElementShortName">r3_inc</obj_property>
+      <obj_property name="ObjectShortName">r3_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/d_ram_write" type="logic">
+      <obj_property name="ElementShortName">d_ram_write</obj_property>
+      <obj_property name="ObjectShortName">d_ram_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/ir_to_cu" type="array">
+      <obj_property name="ElementShortName">ir_to_cu[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ir_to_cu[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor/iram_to_ir" type="array">
+      <obj_property name="ElementShortName">iram_to_ir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">iram_to_ir[15:0]</obj_property>
+   </wvobject>
+</wave_config>

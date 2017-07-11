@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1499597093">
-  <File Type="PA-TCL" Name="processor.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1499766182">
   <File Type="RDS-PROPCONSTRS" Name="processor_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="processor.tcl"/>
   <File Type="RDS-RDS" Name="processor.vds"/>
   <File Type="RDS-UTIL" Name="processor_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="processor_utilization_synth.pb"/>
@@ -38,21 +38,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/B_Bus.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Baud_gen.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/C_Bus.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -131,6 +117,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Processor.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/B_Bus.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

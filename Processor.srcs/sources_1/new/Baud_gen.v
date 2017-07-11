@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 // this is to change the clock rate to a desired level 
 module Baud_gen(
 	 input clk_in,// actual clock 115MHz

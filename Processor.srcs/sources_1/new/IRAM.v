@@ -1,25 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 06/25/2017 03:51:47 PM
-// Design Name: 
-// Module Name: IRAM
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module IRAM(
     input [15:0]i_address,
     input fetch_enable,
@@ -74,7 +53,8 @@ initial begin
 end
 
 always@(posedge clk) begin
-    if (fetch_enable)
+    if (fetch_enable==1)
         i_out <= iram[i_address];
+        
 end
 endmodule

@@ -1,13 +1,12 @@
+`timescale 1ns / 1ps
 module Control_Unit
     (ir,
      r2_flag,
      r3_flag,
      ALU_control,
      A_bus,
-     B_bus,
      d_ram/*data ram write*/,
      fetch,
-     //load,// C_control
      pc_inc,
      mar_inc,
      r2_inc,
@@ -29,7 +28,7 @@ module Control_Unit
     input r2_flag,r3_flag;
     output reg [3:0] ALU_control;
     output reg [2:0] A_bus;
-    output reg B_bus,d_ram,fetch;
+    output reg d_ram,fetch;
     reg [6:0] load;
     output reg pc_inc,mar_inc,r2_inc,r3_inc;
     output wire ac_enable, r1_enable, tem_enable, r2_enable, r3_enable, pc_enable, mar_enable;
@@ -88,7 +87,6 @@ module Control_Unit
             FETCH1 : begin 
                         fetch<=1;
                         d_ram<=0; //write to the DRAM
-                        B_bus<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
                         load <= 7'b0000000; // mar,pc,tem,r3,r2,r1,ac
@@ -101,7 +99,6 @@ module Control_Unit
             FETCH2 : begin
                         fetch<=0;
                         d_ram<=0;
-                        B_bus<=0;
                         ALU_control <= 4'b0101;
                         A_bus<= 3'd0;
                         load <= 7'b0000000;
@@ -115,7 +112,6 @@ module Control_Unit
             CLALL1 : begin
                         fetch<=0;
                         d_ram<=0;
-                        B_bus<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
                         load <= 7'b0000000;
@@ -128,7 +124,6 @@ module Control_Unit
             CLALL2 : begin
                         fetch<=0;
                         d_ram<=0;
-                        B_bus<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
                         load <= 7'b1111111;
@@ -141,7 +136,6 @@ module Control_Unit
             MVMARTR1 : begin
                         fetch<=0;
                         d_ram<=0;
-                        B_bus<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b100;
                         load <= 7'b0000000;
@@ -154,7 +148,7 @@ module Control_Unit
             MVMARTR2 : begin
                         fetch<=0;
                         d_ram<=0;
-                        B_bus<=0;                                                                   
+                                                                                            
                         ALU_control <= 4'b1000;//pass                                                     
                         A_bus<= 3'b000;                                                             
                         load <= 7'b0000000;                                                         
@@ -167,7 +161,7 @@ module Control_Unit
             MVMARTR3 : begin                    
                         fetch<=0;                          
                         d_ram<=0;                          
-                        B_bus<=0;                          
+                                                   
                         ALU_control <= 4'b0000;            
                         A_bus<= 3'b000;                    
                         load <= 7'b0000100;//load                
@@ -180,7 +174,7 @@ module Control_Unit
             LDAC1    : begin                                                                                                                               
                         fetch<=0;                                              
                         d_ram<=0;                       
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b110;        
                         load <= 7'b0000000;    
@@ -194,7 +188,7 @@ module Control_Unit
                       begin                          
                         fetch<=0;                    
                         d_ram<=0;                    
-                        B_bus<=0;                    
+                                             
                         ALU_control <= 4'b0000;      
                         A_bus<= 3'b110;              
                         load <= 7'b0000000;          
@@ -209,7 +203,7 @@ module Control_Unit
             LDAC2    :begin                    
                         fetch<=0;                                               
                         d_ram<=0;                                               
-                        B_bus<=0;                                               
+                                                                        
                         ALU_control <= 4'b1000;//pass                                 
                         A_bus<= 3'b000;                                         
                         load <= 7'b0000000;                                     
@@ -222,7 +216,7 @@ module Control_Unit
             LDAC3    : begin                    
                         fetch<=0;                                         
                         d_ram<=0;                                    
-                        B_bus<=0;                                        
+                                                                 
                         ALU_control <= 4'b0000;             
                         A_bus<= 3'b000;                             
                         load <= 7'b0000001;                     
@@ -235,7 +229,7 @@ module Control_Unit
             MVACR1   : begin            
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b010;//enable        
                         load <= 7'b0000000;    
@@ -248,7 +242,7 @@ module Control_Unit
             MVACR2   : begin
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b1000;//pass
                         A_bus<= 3'b000;        
                         load <= 7'b0000000;    
@@ -261,7 +255,7 @@ module Control_Unit
             MVACR3   : begin    
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
                         load <= 7'b0100000;    
@@ -274,7 +268,7 @@ module Control_Unit
             MARINC1  : begin             
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
                         load <= 7'b0000000;    
@@ -287,7 +281,7 @@ module Control_Unit
             MUL1  : begin
                         fetch<=0;                                      
                         d_ram<=0;                                      
-                        B_bus<=0;                                      
+                                                               
                         ALU_control <= 4'b0000;                        
                         A_bus<= 3'b010;                                
                         load <= 7'b0000000;                            
@@ -300,7 +294,7 @@ module Control_Unit
             MUL2 : begin             
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0100;
                         A_bus<= 3'b000;        
                         load <= 7'b0000000;    
@@ -313,7 +307,7 @@ module Control_Unit
             MUL3: begin              
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
                         load <= 7'b1000000;    
@@ -326,7 +320,7 @@ module Control_Unit
             ADD1: begin              
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b010;        
                         load <= 7'b0000000;    
@@ -339,7 +333,6 @@ module Control_Unit
             ADD2: begin              
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=1;              
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
                         load <= 7'b0000000;    
@@ -352,7 +345,7 @@ module Control_Unit
             ADD3: begin             
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0001;
                         A_bus<= 3'b000;        
                         load <= 7'b0000000;    
@@ -365,7 +358,7 @@ module Control_Unit
             ADD4: begin                
                         fetch<=0;              
                         d_ram<=0;              
-                        B_bus<=0;              
+                                       
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
                         load <= 7'b0100000;    
@@ -378,7 +371,7 @@ module Control_Unit
             ADDMAR1:  begin                              
                          fetch<=0;                                             
                          d_ram<=0;                                                 
-                         B_bus<=0;                                                 
+                                                                           
                          ALU_control <= 4'b0000;                                   
                          A_bus<= 3'b101;                                           
                          load <= 7'b0000000;                                       
@@ -391,7 +384,7 @@ module Control_Unit
             ADDMAR2: begin                                                                                             
                           fetch<=0;                                                
                           d_ram<=0;                                                
-                          B_bus<=0;                                                
+                                                                           
                           ALU_control <= 4'b0110;                                  
                           A_bus<= 3'b000;                                          
                           load <= 7'b0000000;                                      
@@ -404,7 +397,7 @@ module Control_Unit
             ADDMAR3: begin                                                                                           
                            fetch<=0;                                               
                            d_ram<=0;                                               
-                           B_bus<=0;                                               
+                                                                           
                            ALU_control <= 4'b0000;                                 
                            A_bus<= 3'b000;                                         
                            load <= 7'b0000001;                                     
@@ -417,7 +410,7 @@ module Control_Unit
             DIV1 : begin                                                                                           
                             fetch<=0;                                              
                             d_ram<=0;                                              
-                            B_bus<=0;                                              
+                                                                           
                             ALU_control <= 4'b0000;                                
                             A_bus<= 3'b010;                                        
                             load <= 7'b0000000;                                    
@@ -430,7 +423,7 @@ module Control_Unit
             DIV2 : begin                                                                                          
                              fetch<=0;                                             
                              d_ram<=0;                                             
-                             B_bus<=0;                                             
+                                                                           
                              ALU_control <= 4'b0011;                               
                              A_bus<= 3'b000;                                       
                              load <= 7'b0000000;                                   
@@ -443,7 +436,7 @@ module Control_Unit
             DIV3 :  begin                               
                                  fetch<=0;               
                                  d_ram<=0;               
-                                 B_bus<=0;               
+                                                 
                                  ALU_control <= 4'b0000; 
                                  A_bus<= 3'b000;         
                                  load <= 7'b1000000;     
@@ -456,7 +449,7 @@ module Control_Unit
             STTR1:      begin                                                                                              
                             fetch<=0;                                                                                   
                             d_ram<=1;                                                                                   
-                            B_bus<=0;                                                                                   
+                                                                                                                
                             ALU_control <= 4'b0000;                                                                     
                             A_bus<= 3'b000;                                                                             
                             load <= 7'b0000001;                                                                         
@@ -469,7 +462,7 @@ module Control_Unit
             SUB1:   begin                         
                             fetch<=0;              
                             d_ram<=0;              
-                            B_bus<=0;              
+                                           
                             ALU_control <= 4'b0000;
                             A_bus<= 3'b101;        
                             load <= 7'b0000000;    
@@ -482,7 +475,7 @@ module Control_Unit
             SUB2: begin                         
                             fetch<=0;              
                             d_ram<=0;              
-                            B_bus<=0;              
+                                           
                             ALU_control <= 4'b0111;
                             A_bus<= 3'b000;        
                             load <= 7'b0000000;    
@@ -495,7 +488,7 @@ module Control_Unit
             SUB3  :begin                         
                             fetch<=0;              
                             d_ram<=0;              
-                            B_bus<=0;              
+                                           
                             ALU_control <= 4'b0000;
                             A_bus<= 3'b000;        
                             load <= 7'b0000001;    
@@ -508,7 +501,7 @@ module Control_Unit
             INCR2 : begin                         
                             fetch<=0;              
                             d_ram<=0;              
-                            B_bus<=0;              
+                                           
                             ALU_control <= 4'b0000;
                             A_bus<= 3'b000;        
                             load <= 7'b0000000;    
@@ -521,7 +514,7 @@ module Control_Unit
             JUMP1 : begin                          
                             fetch<=0;               
                             d_ram<=0;               
-                            B_bus<=0;               
+                                            
                             ALU_control <= 4'b0000; 
                             A_bus<= 3'b111;         
                             load <= 7'b0000000;     
@@ -534,7 +527,7 @@ module Control_Unit
             JUMP2 : begin                          
                             fetch<=0;               
                             d_ram<=0;               
-                            B_bus<=0;               
+                                            
                             ALU_control <= 4'b1001; 
                             A_bus<= 3'b000;         
                             load <= 7'b0000000;     
@@ -549,7 +542,7 @@ module Control_Unit
             JUMP3 : begin     
                             fetch<=0;               
                             d_ram<=0;               
-                            B_bus<=0;               
+                                            
                             ALU_control <= 4'b0000; 
                             A_bus<= 3'b000;         
                             load <= 7'b0000010;     
@@ -563,7 +556,7 @@ module Control_Unit
             INCR3:           begin                          
                             fetch<=0;               
                             d_ram<=0;               
-                            B_bus<=0;               
+                                            
                             ALU_control <= 4'b0000; 
                             A_bus<= 3'b000;         
                             load <= 7'b0000000;     
@@ -576,7 +569,7 @@ module Control_Unit
             JMPNXT1 : begin                            
                             fetch<=0;                                                                                                                                                                                                                                                      
                             d_ram<=0;                                                                                                                                                                                                                                                      
-                            B_bus<=0;                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                   
                             ALU_control <= 4'b0000;                                                                                                                                                                                                                                        
                             A_bus<= 3'b001;                                                                                                                                                                                                                                                
                             load <= 7'b0000000;                                                                                                                                                                                                                                            
@@ -589,7 +582,7 @@ module Control_Unit
             JMPNXT2 : begin                             
                             fetch<=0;               
                             d_ram<=0;               
-                            B_bus<=0;               
+                                            
                             ALU_control <= 4'b1010; 
                             A_bus<= 3'b000;         
                             load <= 7'b0000000;     
@@ -602,7 +595,7 @@ module Control_Unit
             JMPNXT3 : begin                             
                            fetch<=0;               
                            d_ram<=0;               
-                           B_bus<=0;               
+                                           
                            ALU_control <= 4'b0000; 
                            A_bus<= 3'b000;         
                            load <= 7'b0000010;     
@@ -619,7 +612,7 @@ module Control_Unit
                         begin                             
                            fetch<=0;               
                            d_ram<=0;               
-                           B_bus<=0;               
+                                           
                            ALU_control <= 4'b0000; 
                            A_bus<= 3'b000;         
                           load <= 7'b0000000;     

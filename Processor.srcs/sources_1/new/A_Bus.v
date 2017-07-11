@@ -1,11 +1,11 @@
-module A_Bus(bus_control,r1,r2,r3,ac,tem,pc,mar,d_ram,d_out);
+`timescale 1ns / 1ps
+module A_Bus(bus_control,r2,r3,ac,tem,pc,mar,d_ram,d_out);
 input [2:0] bus_control;
-input [15:0] r1,ac,d_ram,pc,tem,mar;
+input [15:0]ac,d_ram,pc,tem,mar;
 input [7:0] r3,r2;
 output reg [15:0] d_out;
-always@(bus_control or r1 or r2 or ac or tem or pc or mar or d_ram)
+always@(bus_control or r2 or ac or tem or pc or mar or d_ram or r3)
     case (bus_control)
-        3'b000: d_out<=r1;
         3'b001: d_out<={9'd0,r3};
         3'b010: d_out<=ac;
         3'b011: d_out<=tem;

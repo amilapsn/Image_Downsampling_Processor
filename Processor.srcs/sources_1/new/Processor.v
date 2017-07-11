@@ -1,4 +1,5 @@
 // RX- data from matlab, Tx- data to matlab , Memory on- a default one. need to make it high,data_in_con and data_out_con- the external switch part that we discussed
+`timescale 1ns / 1ps
 module processor
     (actual_clk,
      RX,
@@ -15,19 +16,18 @@ module processor
     wire [15:0] rx_byte, index;
     input switch;// assign this to a switch in the board
     input RX;
+    wire[15:0] data_2byte;
     input MEMORY_ON,Data_in_Control,Data_out_Control;
     input actual_clk;
     output rx_done, com_done,process_over_led;
-    output Tx;
+    output[15:0] Tx;
     wire clk;
-    wire [15:0] Abus,Bbus,Cbus,DRAM_wire,address_wire,ac_to_memory,mem_in,mem_out;
-    wire [15:0] to_mar,to_tem,to_r1,to_r2,to_ac,to_pc;
-    wire [15:0] from_mar,from_tem,from_tr,from_r1,from_ac,from_pc;
-    wire [7:0] to_r3,from_r2,from_r3;
+    wire [15:0] Abus,Cbus,DRAM_wire,address_wire,ac_to_memory,mem_in,mem_out;
+    wire [15:0] from_mar,from_tem,Bbus,from_ac,from_pc;
+    wire [7:0] from_r2,from_r3;
     wire [3:0] ALU_control;
-    wire [6:0] C_control;
     wire [2:0] A_control;
-    wire alu_r2_flag,alu_r3_flag,z_flag,B_control;
+    wire alu_r2_flag,alu_r3_flag,z_flag;
     wire pc_inc,mar_inc,r2_inc,r3_inc;
     wire d_ram_write,fetch_enable;
     wire [15:0]ir_to_cu,iram_to_ir;
@@ -38,7 +38,7 @@ module processor
         (switch,
          clk, 
          RX,
-         rx_byte,
+         data_2byte,
          rx_done,
          index,
          wea,
@@ -53,7 +53,6 @@ module processor
     //A bus
     A_Bus busA 
         (A_control,
-         from_r1,
          from_r2,
          from_r3,
          from_ac,
@@ -63,27 +62,10 @@ module processor
          DRAM_wire,
          Abus);
 
-    //B bus
-    B_Bus busB 
-        (B_control,
-         from_r1,
-         Bbus);
-
-    //C bus
-    C_Bus busC
-        (to_mar,
-         to_pc,
-         to_tem,
-         to_r3,
-         to_r2,
-         to_r1,
-         to_ac,
-         C_control,
-         Cbus);
 
     //IRAM
     IRAM iram 
-        (ir_to_cu,
+        (from_pc,
          fetch_enable,
          clk,
          iram_to_ir);
@@ -99,14 +81,14 @@ module processor
 
     //data ram controler
     Memory_Control mem_con
-        (RX,
+        (data_2byte,
          mem_out,
          ac_to_memory,
          Tx,
          DRAM_wire,
          mem_in,
-         Data_out_Control,
          Data_in_Control,
+         Data_out_Control,
          clk);
 
     //ALU 
@@ -126,7 +108,6 @@ module processor
          alu_r3_flag,
          ALU_control,
          A_control,
-         B_control,
          d_ram_write,
          fetch_enable,
          pc_inc,
@@ -145,39 +126,39 @@ module processor
     
     AC_Reg AC 
         (clk,
-         to_ac,
+         Cbus,
          from_ac,
          ac_to_memory,
          ac_enable);
          
     R16_bit R1
-        (to_r1,
-         from_r1,
+        (Cbus,
+         Bbus,
          clk,
          r1_enable);
 
     R16_bit TEM
-        (to_tem,
+        (Cbus,
          from_tem,
          clk,
          tem_enable);
          
     R8_bit R2
-        (to_r2,
+        (Cbus[7:0],
          from_r2,
          r2_inc,
          clk,
          r2_enable);
          
     R8_bit R3
-        (to_r3,
+        (Cbus[7:0],
          from_r3,
          r3_inc,
          clk,
          r3_enable);
          
     R16_bit_inc PC
-        (to_pc,
+        (Cbus,
          from_pc,
          pc_inc,
          clk,
@@ -186,7 +167,7 @@ module processor
     MAR_Reg MAR
         (clk,
          mar_inc,
-         to_mar,
+         Cbus,
          from_mar,
          address_wire,
          mar_enable);

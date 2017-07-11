@@ -25,8 +25,11 @@ input [15:0] Bus_in;
 input B_control;
 output reg [15:0] Bus_out;
 
-always@(B_control) begin
+always@(B_control or Bus_in) begin
     if (B_control==1)
         Bus_out<=Bus_in;
+    else
+        Bus_out<=Bus_in;
+        
 end
 endmodule

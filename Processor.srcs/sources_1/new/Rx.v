@@ -1,8 +1,9 @@
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator*/);
+module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indicator*/);
     
     reg [2:0] state 			= 0;                         // 7 states so 3 bit variable is declared
-    reg [15:0] data_2byte         = 0;          //  16 bit buffer
+    output [15:0] data_2byte   ;          //  16 bit buffer
     reg [32:0] clock_count     = 0;             // counter tohold clok counts
     reg [2:0] rx_bit_index     = 0;                 // ?
     output reg  [15:0] index=0;
@@ -10,7 +11,7 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
     reg rxdone                    = 0;
     /*output reg indicator=0;*///?
     output rx_done;
-    output [15:0] rx_byte;
+    reg [8:0] rx_byte;
     input rx_in;
     input clk;
     input switch;//assign this to real switch
@@ -28,7 +29,7 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
 	
 
 	
-	assign rx_byte = data_2byte;
+	assign data_2byte = {8'd0,rx_byte};
 	assign rx_done = rxdone;
 	
 	always@(posedge clk)
@@ -44,7 +45,7 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
 							begin
 								rxdone <= 1'b0;
 								wae<=0;
-								data_2byte <= 0;
+								rx_byte <= 0;
 								state <= START;	
 							end
 						else
@@ -82,7 +83,7 @@ module UART_RX( switch,clk, rx_in,rx_byte,rx_done,index,wae,com_done/*,indicator
 							end
 						else
 							begin
-								data_2byte[rx_bit_index] <= rx_in;
+								rx_byte[rx_bit_index] <= rx_in;
 								
 								if(rx_bit_index < 7)
 									begin										

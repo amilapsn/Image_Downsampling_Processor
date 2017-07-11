@@ -21,9 +21,7 @@ read_verilog -library xil_defaultlib {
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v
-  D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v
-  D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v

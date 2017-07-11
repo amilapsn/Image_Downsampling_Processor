@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Jul 11 11:54:59 2017
+# Process ID: 7548
+# Current directory: D:/GitHub/Image_Downsampling_Processor/Processor.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source D:/GitHub/Image_Downsampling_Processor/Processor.sim/sim_1/behav/xsim.dir/processor_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/GitHub/Image_Downsampling_Processor/Processor.sim/sim_1/behav/webtalk.log
+# Journal file: D:/GitHub/Image_Downsampling_Processor/Processor.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source D:/GitHub/Image_Downsampling_Processor/Processor.sim/sim_1/behav/xsim.dir/processor_behav/webtalk/xsim_webtalk.tcl -notrace

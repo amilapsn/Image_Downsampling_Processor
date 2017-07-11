@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Sun Jul  9 16:14:55 2017
-# Process ID: 14088
+# Start of session at: Tue Jul 11 15:13:04 2017
+# Process ID: 5964
 # Current directory: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1
 # Command line: vivado.exe -log processor.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source processor.tcl
 # Log file: D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.vds
@@ -18,12 +18,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12084 
+INFO: Helper process launched with PID 7656 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 318.238 ; gain = 76.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 317.227 ; gain = 74.797
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'processor' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
-INFO: [Synth 8-638] synthesizing module 'UART_RX' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:2]
+INFO: [Synth 8-638] synthesizing module 'processor' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:3]
+INFO: [Synth 8-638] synthesizing module 'UART_RX' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:3]
 	Parameter CLOCKS_PER_BIT bound to: 1085 - type: integer 
 	Parameter IDLE bound to: 3'b000 
 	Parameter START bound to: 3'b001 
@@ -32,36 +32,26 @@ INFO: [Synth 8-638] synthesizing module 'UART_RX' [D:/GitHub/Image_Downsampling_
 	Parameter CLEANUP bound to: 3'b100 
 	Parameter DELAY bound to: 1 - type: integer 
 	Parameter END bound to: 3'b101 
-INFO: [Synth 8-256] done synthesizing module 'UART_RX' (1#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:2]
-INFO: [Synth 8-638] synthesizing module 'Baud_gen' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:2]
+INFO: [Synth 8-256] done synthesizing module 'UART_RX' (1#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:3]
+INFO: [Synth 8-638] synthesizing module 'Baud_gen' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:3]
 	Parameter FACTOR bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Baud_gen' (2#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:2]
-INFO: [Synth 8-638] synthesizing module 'A_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:1]
-WARNING: [Synth 8-567] referenced signal 'r3' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:6]
-INFO: [Synth 8-256] done synthesizing module 'A_Bus' (3#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:1]
-INFO: [Synth 8-638] synthesizing module 'B_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:23]
-WARNING: [Synth 8-567] referenced signal 'Bus_in' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:28]
-INFO: [Synth 8-256] done synthesizing module 'B_Bus' (4#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:23]
-INFO: [Synth 8-638] synthesizing module 'C_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:1]
-WARNING: [Synth 8-567] referenced signal 'd_in' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:8]
-WARNING: [Synth 8-6014] Unused sequential element a_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:18]
-INFO: [Synth 8-256] done synthesizing module 'C_Bus' (5#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:1]
-WARNING: [Synth 8-689] width (8) of port connection 'r3' does not match port width (16) of module 'C_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:77]
-INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:23]
-INFO: [Synth 8-256] done synthesizing module 'IRAM' (6#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Baud_gen' (2#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:3]
+INFO: [Synth 8-638] synthesizing module 'A_Bus' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:2]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:8]
+INFO: [Synth 8-256] done synthesizing module 'A_Bus' (3#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:2]
+INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:2]
+INFO: [Synth 8-256] done synthesizing module 'IRAM' (4#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:2]
 INFO: [Synth 8-638] synthesizing module 'DRAM_wrapper' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'DRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
-INFO: [Synth 8-638] synthesizing module 'DRAM_blk_mem_gen_0_0' [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-14088-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'DRAM_blk_mem_gen_0_0' (7#1) [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-14088-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'DRAM' (8#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
-INFO: [Synth 8-256] done synthesizing module 'DRAM_wrapper' (9#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
+INFO: [Synth 8-638] synthesizing module 'DRAM_blk_mem_gen_0_0' [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-5964-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DRAM_blk_mem_gen_0_0' (5#1) [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-5964-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DRAM' (6#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
+INFO: [Synth 8-256] done synthesizing module 'DRAM_wrapper' (7#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:15]
-INFO: [Synth 8-256] done synthesizing module 'Memory_Control' (10#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:15]
-WARNING: [Synth 8-689] width (1) of port connection 'd_in' does not match port width (16) of module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:102]
-WARNING: [Synth 8-689] width (1) of port connection 'd_out' does not match port width (16) of module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:105]
-INFO: [Synth 8-638] synthesizing module 'ALU' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:1]
-INFO: [Synth 8-256] done synthesizing module 'ALU' (11#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:1]
-INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Memory_Control' (8#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:15]
+INFO: [Synth 8-638] synthesizing module 'ALU' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-256] done synthesizing module 'ALU' (9#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:2]
+INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:2]
 	Parameter FETCH1 bound to: 16'b0000000000000001 
 	Parameter FETCH2 bound to: 16'b0000000000000010 
 	Parameter CLALL1 bound to: 16'b0000000000000011 
@@ -103,26 +93,24 @@ INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsamp
 	Parameter JMPNXT3 bound to: 16'b0000000000100111 
 	Parameter NOP bound to: 16'b0000000000101000 
 	Parameter END bound to: 16'b0000000000101001 
-INFO: [Synth 8-256] done synthesizing module 'Control_Unit' (12#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Control_Unit' (10#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:2]
 INFO: [Synth 8-638] synthesizing module 'AC_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
-INFO: [Synth 8-256] done synthesizing module 'AC_Reg' (13#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
-INFO: [Synth 8-638] synthesizing module 'R16_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:1]
-INFO: [Synth 8-256] done synthesizing module 'R16_bit' (14#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:1]
+INFO: [Synth 8-256] done synthesizing module 'AC_Reg' (11#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
+INFO: [Synth 8-638] synthesizing module 'R16_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:2]
+INFO: [Synth 8-256] done synthesizing module 'R16_bit' (12#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit.v:2]
 INFO: [Synth 8-638] synthesizing module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:2]
-INFO: [Synth 8-256] done synthesizing module 'R8_bit' (15#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:2]
-WARNING: [Synth 8-689] width (16) of port connection 'd_in' does not match port width (8) of module 'R8_bit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:166]
-INFO: [Synth 8-638] synthesizing module 'R16_bit_inc' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:1]
-INFO: [Synth 8-256] done synthesizing module 'R16_bit_inc' (16#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:1]
+INFO: [Synth 8-256] done synthesizing module 'R8_bit' (13#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:2]
+INFO: [Synth 8-638] synthesizing module 'R16_bit_inc' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:2]
+INFO: [Synth 8-256] done synthesizing module 'R16_bit_inc' (14#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:2]
 INFO: [Synth 8-638] synthesizing module 'MAR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:2]
-INFO: [Synth 8-256] done synthesizing module 'MAR_Reg' (17#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:2]
+INFO: [Synth 8-256] done synthesizing module 'MAR_Reg' (15#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:2]
 INFO: [Synth 8-638] synthesizing module 'IR_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:2]
-INFO: [Synth 8-256] done synthesizing module 'IR_Reg' (18#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:2]
-WARNING: [Synth 8-3848] Net C_control in module/entity processor does not have driver. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:28]
-INFO: [Synth 8-256] done synthesizing module 'processor' (19#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:2]
+INFO: [Synth 8-256] done synthesizing module 'IR_Reg' (16#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IR.v:2]
+INFO: [Synth 8-256] done synthesizing module 'processor' (17#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:3]
 WARNING: [Synth 8-3331] design UART_RX has unconnected port switch
 WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 357.566 ; gain = 115.398
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 357.559 ; gain = 115.129
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -131,23 +119,16 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[6] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[5] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[4] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[3] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[2] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[1] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
-WARNING: [Synth 8-3295] tying undriven pin busC:c_control[0] to constant 0 [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:73]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 357.566 ; gain = 115.398
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 357.559 ; gain = 115.129
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-14088-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
-Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-14088-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-5964-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-5964-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
 Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
@@ -155,16 +136,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 659.527 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 657.520 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -172,10 +153,10 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for dram/DRAM_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dram/DRAM_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_RX'
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
 INFO: [Synth 8-5544] ROM "com_done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "index" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "wae" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -183,24 +164,17 @@ INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address si
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:133]
-WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:16]
-INFO: [Synth 8-5546] ROM "mar" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "pc" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "tem" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "r3" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "r2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "r1" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "ac" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:134]
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:17]
 INFO: [Synth 8-5546] ROM "iram" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "r2_flag" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "C_bus" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "fetch" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "process_over_led" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:15]
-WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:10]
 WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:13]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -211,20 +185,13 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Gi
                  CLEANUP |                            10000 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'UART_RX'
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:36]
-WARNING: [Synth 8-327] inferring latch for variable 'Bus_out_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/B_Bus.v:30]
-WARNING: [Synth 8-327] inferring latch for variable 'mar_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:11]
-WARNING: [Synth 8-327] inferring latch for variable 'pc_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:12]
-WARNING: [Synth 8-327] inferring latch for variable 'tem_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:13]
-WARNING: [Synth 8-327] inferring latch for variable 'r3_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:14]
-WARNING: [Synth 8-327] inferring latch for variable 'r2_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:15]
-WARNING: [Synth 8-327] inferring latch for variable 'r1_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:16]
-WARNING: [Synth 8-327] inferring latch for variable 'ac_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/C_Bus.v:17]
-WARNING: [Synth 8-327] inferring latch for variable 'C_bus_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:11]
-WARNING: [Synth 8-327] inferring latch for variable 'r2_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:22]
-WARNING: [Synth 8-327] inferring latch for variable 'r3_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:28]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'd_out_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:9]
+WARNING: [Synth 8-327] inferring latch for variable 'C_bus_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:12]
+WARNING: [Synth 8-327] inferring latch for variable 'r2_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'r3_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:27]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -243,19 +210,19 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               33 Bit    Registers := 1     
-	               16 Bit    Registers := 11    
+	               16 Bit    Registers := 10    
+	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input     33 Bit        Muxes := 1     
 	   5 Input     33 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 4     
-	   5 Input     16 Bit        Muxes := 2     
 	  43 Input     16 Bit        Muxes := 1     
-	  10 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
 	  42 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   5 Input      9 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 2     
 	   8 Input      7 Bit        Muxes := 1     
 	   2 Input      7 Bit        Muxes := 1     
@@ -265,14 +232,13 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	   5 Input      3 Bit        Muxes := 1     
-	  10 Input      3 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
 	  42 Input      3 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 7     
-	   8 Input      1 Bit        Muxes := 7     
-	  10 Input      1 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 14    
-	  42 Input      1 Bit        Muxes := 8     
+	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	  11 Input      1 Bit        Muxes := 3     
+	  42 Input      1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -287,14 +253,14 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
 	               33 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     33 Bit        Muxes := 1     
 	   5 Input     33 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   5 Input     16 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+	   5 Input      9 Bit        Muxes := 2     
 	  11 Input      5 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
@@ -306,10 +272,10 @@ Detailed RTL Component Info :
 +---Registers : 
 	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
-Module C_Bus 
+Module A_Bus 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   8 Input      1 Bit        Muxes := 7     
+	   8 Input      1 Bit        Muxes := 1     
 Module IRAM 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -327,12 +293,8 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     16 Bit       Adders := 3     
 +---Muxes : 
-	  10 Input     16 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 1     
-	   8 Input     16 Bit        Muxes := 1     
-	  10 Input      3 Bit        Muxes := 1     
-	  10 Input      1 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 3     
 Module Control_Unit 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -346,8 +308,8 @@ Detailed RTL Component Info :
 	   8 Input      3 Bit        Muxes := 1     
 	  42 Input      3 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
-	  42 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 7     
+	  42 Input      1 Bit        Muxes := 7     
 Module AC_Reg 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -394,215 +356,17 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element rx/data_2byte_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:31]
-WARNING: [Synth 8-6014] Unused sequential element rx/index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:133]
-WARNING: [Synth 8-3936] Found unconnected internal register 'mem_con/d_out_reg' and it is trimmed from '16' to '1' bits. [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:30]
-INFO: [Synth 8-5546] ROM "busC/mar" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/pc" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/tem" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/r3" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/r2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/r1" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "busC/ac" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "alu/r2_flag" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element baud/counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:16]
+WARNING: [Synth 8-6014] Unused sequential element rx/index_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:134]
+INFO: [Synth 8-5546] ROM "alu/C_bus" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element baud/counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:17]
 WARNING: [Synth 8-6014] Unused sequential element R2/d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:15]
 WARNING: [Synth 8-6014] Unused sequential element R3/d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:15]
-WARNING: [Synth 8-6014] Unused sequential element PC/d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:9]
+WARNING: [Synth 8-6014] Unused sequential element PC/d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v:10]
 WARNING: [Synth 8-6014] Unused sequential element MAR/d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/MAR.v:13]
 WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
 WARNING: [Synth 8-3331] design processor has unconnected port switch
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[14]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[15]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[13]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[12]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[11]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[10]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[9]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[8]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/pc_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/tem_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r3_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r1_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \busC/r2_reg[2]  is always disabled
-INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[14]' (LD) to 'busC/mar_reg[14]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[14]' (LD) to 'busC/mar_reg[14]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[14]' (LD) to 'busC/mar_reg[14]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[14]' (LD) to 'busC/mar_reg[14]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[15]' (LD) to 'busC/mar_reg[15]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[15]' (LD) to 'busC/mar_reg[15]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[15]' (LD) to 'busC/mar_reg[15]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[15]' (LD) to 'busC/mar_reg[15]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[13]' (LD) to 'busC/mar_reg[13]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[13]' (LD) to 'busC/mar_reg[13]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[13]' (LD) to 'busC/mar_reg[13]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[13]' (LD) to 'busC/mar_reg[13]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[12]' (LD) to 'busC/mar_reg[12]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[12]' (LD) to 'busC/mar_reg[12]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[12]' (LD) to 'busC/mar_reg[12]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[12]' (LD) to 'busC/mar_reg[12]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[11]' (LD) to 'busC/mar_reg[11]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[11]' (LD) to 'busC/mar_reg[11]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[11]' (LD) to 'busC/mar_reg[11]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[11]' (LD) to 'busC/mar_reg[11]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[10]' (LD) to 'busC/mar_reg[10]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[10]' (LD) to 'busC/mar_reg[10]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[10]' (LD) to 'busC/mar_reg[10]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[10]' (LD) to 'busC/mar_reg[10]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[9]' (LD) to 'busC/mar_reg[9]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[9]' (LD) to 'busC/mar_reg[9]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[9]' (LD) to 'busC/mar_reg[9]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[9]' (LD) to 'busC/mar_reg[9]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[8]' (LD) to 'busC/mar_reg[8]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[8]' (LD) to 'busC/mar_reg[8]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[8]' (LD) to 'busC/mar_reg[8]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[8]' (LD) to 'busC/mar_reg[8]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[0]' (LD) to 'busC/mar_reg[0]'
-INFO: [Synth 8-3886] merging instance 'busC/pc_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/r2_reg[0]' (LD) to 'busC/mar_reg[0]'
 INFO: [Synth 8-3886] merging instance 'cu/load_reg[4]' (FDE_1) to 'cu/load_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/tem_reg[0]' (LD) to 'busC/mar_reg[0]'
-INFO: [Synth 8-3886] merging instance 'busC/r3_reg[0]' (LD) to 'busC/mar_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/r3_inc_reg )
-INFO: [Synth 8-3886] merging instance 'busC/r1_reg[0]' (LD) to 'busC/mar_reg[0]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[0]' (LD) to 'busC/mar_reg[0]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[1]' (LD) to 'busC/mar_reg[1]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[2]' (LD) to 'busC/mar_reg[2]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[3]' (LD) to 'busC/mar_reg[3]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[4]' (LD) to 'busC/mar_reg[4]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[5]' (LD) to 'busC/mar_reg[5]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[6]' (LD) to 'busC/mar_reg[6]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[7]' (LD) to 'busC/mar_reg[7]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[8]' (LD) to 'busC/mar_reg[8]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[9]' (LD) to 'busC/mar_reg[9]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[10]' (LD) to 'busC/mar_reg[10]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[11]' (LD) to 'busC/mar_reg[11]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[12]' (LD) to 'busC/mar_reg[12]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[13]' (LD) to 'busC/mar_reg[13]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[14]' (LD) to 'busC/mar_reg[14]'
-INFO: [Synth 8-3886] merging instance 'busC/ac_reg[15]' (LD) to 'busC/mar_reg[15]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r3_flag_reg )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r2_flag_reg )
 INFO: [Synth 8-3886] merging instance 'cu/NS_reg[12]' (FDE_1) to 'cu/NS_reg[15]'
@@ -617,7 +381,13 @@ INFO: [Synth 8-3886] merging instance 'cu/NS_reg[10]' (FDE_1) to 'cu/NS_reg[9]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/NS_reg[9] )
 INFO: [Synth 8-3886] merging instance 'cu/PS_reg[12]' (FD_1) to 'cu/PS_reg[6]'
 INFO: [Synth 8-3886] merging instance 'cu/PS_reg[11]' (FD_1) to 'cu/PS_reg[6]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[13]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[15]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[14]' (FD_1) to 'cu/PS_reg[6]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[6]' (FD_1) to 'cu/PS_reg[7]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[7]' (FD_1) to 'cu/PS_reg[8]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[8]' (FD_1) to 'cu/PS_reg[9]'
+INFO: [Synth 8-3886] merging instance 'cu/PS_reg[10]' (FD_1) to 'cu/PS_reg[9]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rx/com_done_reg )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/PS_reg[9] )
 WARNING: [Synth 8-3332] Sequential element (alu/r2_flag_reg) is unused and will be removed from module processor.
@@ -628,7 +398,7 @@ WARNING: [Synth 8-3332] Sequential element (cu/PS_reg[9]) is unused and will be 
 WARNING: [Synth 8-3332] Sequential element (cu/NS_reg[9]) is unused and will be removed from module processor.
 WARNING: [Synth 8-3332] Sequential element (rx/com_done_reg) is unused and will be removed from module processor.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -640,13 +410,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -657,102 +427,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[15]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[14]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[13]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[12]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[11]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[10]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[9]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[8]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[7]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[4]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (busB/Bus_out_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[15]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[14]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[13]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[12]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[11]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[10]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[9]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[8]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[7]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[4]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/C_bus_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/ALU_control_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/ALU_control_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/ALU_control_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/ALU_control_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/A_bus_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/A_bus_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/A_bus_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/mar_inc_reg) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/r2_inc_reg) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (cu/load_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[15]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[14]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[13]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[12]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[11]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[10]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[9]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[8]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[7]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[4]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (R1/d_out_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[15]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[14]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[13]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[12]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[11]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[10]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[9]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[8]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[7]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[4]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[2]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[1]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (AC/d_out_reg[0]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[15]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[14]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[13]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[12]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[11]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[10]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[9]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[8]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[7]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[6]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[5]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[4]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[3]) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (TEM/d_out_reg[2]) is unused and will be removed from module processor.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:38 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -776,7 +452,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -789,7 +465,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -801,25 +477,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -838,50 +514,61 @@ Report Cell Usage:
 +------+---------------------+------+
 |1     |DRAM_blk_mem_gen_0_0 |     1|
 |2     |BUFG                 |     2|
-|3     |CARRY4               |     8|
-|4     |LUT1                 |    33|
-|5     |LUT2                 |     5|
-|6     |LUT3                 |     7|
-|7     |LUT4                 |     7|
-|8     |LUT5                 |    16|
-|9     |LUT6                 |    58|
-|10    |MUXF7                |     2|
-|11    |FDRE                 |    78|
-|12    |IBUF                 |     4|
-|13    |OBUF                 |     4|
+|3     |CARRY4               |    26|
+|4     |LUT1                 |    59|
+|5     |LUT2                 |    24|
+|6     |LUT3                 |    60|
+|7     |LUT4                 |    14|
+|8     |LUT5                 |    36|
+|9     |LUT6                 |   157|
+|10    |MUXF7                |    11|
+|11    |FDRE                 |   279|
+|12    |LD                   |    32|
+|13    |IBUF                 |     4|
+|14    |OBUF                 |    19|
 +------+---------------------+------+
 
 Report Instance Areas: 
 +------+-----------+---------------+------+
 |      |Instance   |Module         |Cells |
 +------+-----------+---------------+------+
-|1     |top        |               |   240|
-|2     |  IR       |IR_Reg         |    10|
-|3     |  baud     |Baud_gen       |    22|
-|4     |  cu       |Control_Unit   |    32|
-|5     |  dram     |DRAM_wrapper   |    16|
-|6     |    DRAM_i |DRAM           |    16|
-|7     |  iram     |IRAM           |     5|
-|8     |  mem_con  |Memory_Control |     3|
-|9     |  rx       |UART_RX        |   142|
+|1     |top        |               |   739|
+|2     |  AC       |AC_Reg         |    32|
+|3     |  IR       |IR_Reg         |     6|
+|4     |  MAR      |MAR_Reg        |    51|
+|5     |  PC       |R16_bit_inc    |    41|
+|6     |  R1       |R16_bit        |    16|
+|7     |  R2       |R8_bit         |    20|
+|8     |  R3       |R8_bit_0       |     8|
+|9     |  TEM      |R16_bit_1      |    16|
+|10    |  alu      |ALU            |    28|
+|11    |  baud     |Baud_gen       |    22|
+|12    |  busA     |A_Bus          |    59|
+|13    |  cu       |Control_Unit   |   165|
+|14    |  dram     |DRAM_wrapper   |    16|
+|15    |    DRAM_i |DRAM           |    16|
+|16    |  iram     |IRAM           |     6|
+|17    |  mem_con  |Memory_Control |    59|
+|18    |  rx       |UART_RX        |   169|
 +------+-----------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 743 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 659.527 ; gain = 115.398
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 659.527 ; gain = 417.359
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 657.520 ; gain = 115.129
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 657.520 ; gain = 415.090
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 62 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 32 instances were transformed.
+  LD => LDCE: 32 instances
 
-188 Infos, 248 Warnings, 0 Critical Warnings and 0 Errors encountered.
+87 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 659.527 ; gain = 422.328
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:44 . Memory (MB): peak = 657.520 ; gain = 420.969
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 659.527 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jul  9 16:15:41 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 657.520 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 11 15:13:56 2017...
