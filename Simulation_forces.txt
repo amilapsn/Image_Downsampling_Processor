@@ -1,0 +1,4 @@
+add_force {/processor/switch} -radix hex {1 0ns}
+add_force {/processor/actual_clk} -radix hex {1 0ns} {0 50000ps} -repeat_every 100000ps
+add_force {/processor/Data_in_Control} -radix hex {1 0ns}
+add_force {/processor/Data_out_Control} -radix hex {0 0ns}

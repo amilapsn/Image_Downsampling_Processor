@@ -12,8 +12,8 @@ module processor
      com_done,
      process_over_led); 
      
-    wire wea,ac_enable, r1_enable, tem_enable, r2_enable, r3_enable, pc_enable, mar_enable, ir_enable;
-    wire [15:0] rx_byte, index;
+    wire wea, wea_cu,wea_rx,ac_enable, r1_enable, tem_enable, r2_enable, r3_enable, pc_enable, mar_enable, ir_enable;
+    wire [15:0] rx_byte;
     input switch;// assign this to a switch in the board
     input RX;
     wire[15:0] data_2byte;
@@ -21,9 +21,9 @@ module processor
     input actual_clk;
     output rx_done, com_done,process_over_led;
     output[15:0] Tx;
-    wire clk;
-    wire [15:0] Abus,Cbus,DRAM_wire,address_wire,ac_to_memory,mem_in,mem_out;
-    wire [15:0] from_mar,from_tem,Bbus,from_ac,from_pc;
+    wire clk,addr_select;
+    wire [15:0] Abus,Cbus,DRAM_wire,ac_to_memory,mem_in,mem_out;
+    wire [15:0] addr_proc, addr_tem,addr_mar,addr_rx,addr,Bbus,from_ac,from_pc;
     wire [7:0] from_r2,from_r3;
     wire [3:0] ALU_control;
     wire [2:0] A_control;
@@ -33,6 +33,18 @@ module processor
     wire [15:0]ir_to_cu,iram_to_ir;
     /*reg indicator;*///dunno what's this for may be a light to indicate com finished
 
+
+
+    // addr_mux
+    addr_mux addr_mux(
+        addr_mar,
+        addr_tem,
+        clk,
+        addr_select,
+        addr_proc
+        );
+    
+    
     //rx module
     UART_RX rx
         (switch,
@@ -40,8 +52,8 @@ module processor
          RX,
          data_2byte,
          rx_done,
-         index,
-         wea,
+         addr_rx,
+         wea_rx,
          com_done/*,
          indicator*/);
 
@@ -56,9 +68,9 @@ module processor
          from_r2,
          from_r3,
          from_ac,
-         from_tem,
+         addr_tem,
          from_pc,
-         from_mar,
+         addr_mar,
          DRAM_wire,
          Abus);
 
@@ -72,7 +84,7 @@ module processor
 
     //Data ram ip block
     DRAM_wrapper dram
-        (address_wire,
+        (addr,
          clk,
          mem_in,
          mem_out,
@@ -83,13 +95,19 @@ module processor
     Memory_Control mem_con
         (data_2byte,
          mem_out,
-         ac_to_memory,
+         Bbus,
          Tx,
          DRAM_wire,
          mem_in,
          Data_in_Control,
          Data_out_Control,
-         clk);
+         clk,
+         wea_cu,
+         wea_rx,
+         wea,
+         addr_rx,
+         addr_proc,
+         addr);
 
     //ALU 
     ALU alu 
@@ -108,7 +126,7 @@ module processor
          alu_r3_flag,
          ALU_control,
          A_control,
-         d_ram_write,
+         wea_cu,
          fetch_enable,
          pc_inc,
          mar_inc,
@@ -122,13 +140,13 @@ module processor
          r2_enable,
          r3_enable,
          pc_enable,
-         mar_enable);
+         mar_enable,
+         addr_select);
     
     AC_Reg AC 
         (clk,
          Cbus,
          from_ac,
-         ac_to_memory,
          ac_enable);
          
     R16_bit R1
@@ -139,7 +157,7 @@ module processor
 
     R16_bit TEM
         (Cbus,
-         from_tem,
+         addr_tem,
          clk,
          tem_enable);
          
@@ -168,8 +186,7 @@ module processor
         (clk,
          mar_inc,
          Cbus,
-         from_mar,
-         address_wire,
+         addr_mar,
          mar_enable);
          
     IR_Reg IR//to abus?

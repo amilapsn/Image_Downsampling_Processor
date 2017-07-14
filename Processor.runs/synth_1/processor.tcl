@@ -32,6 +32,7 @@ read_verilog -library xil_defaultlib {
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R16_bit_inc.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v
+  D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/addr_mux.v
   D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v
 }
 add_files D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/DRAM.bd

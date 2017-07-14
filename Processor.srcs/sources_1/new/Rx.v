@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indicator*/);
+module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wea,com_done/*,indicator*/);
     
     reg [2:0] state 			= 0;                         // 7 states so 3 bit variable is declared
     output [15:0] data_2byte   ;          //  16 bit buffer
     reg [32:0] clock_count     = 0;             // counter tohold clok counts
     reg [2:0] rx_bit_index     = 0;                 // ?
     output reg  [15:0] index=0;
-    output reg wae,com_done;
+    output reg wea,com_done;
     reg rxdone                    = 0;
     /*output reg indicator=0;*///?
     output rx_done;
@@ -44,14 +44,14 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 						if(rx_in == 1'b0)
 							begin
 								rxdone <= 1'b0;
-								wae<=0;
+								wea<=0;
 								rx_byte <= 0;
 								state <= START;	
 							end
 						else
 							begin								
 								rx_bit_index <= 0;
-								wae<=0;
+								wea<=0;
 								clock_count <= 0;
 								state <= IDLE;
 							end
@@ -62,13 +62,13 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 						if(clock_count < ((CLOCKS_PER_BIT/2) - 1) )
 							begin
 								clock_count <= clock_count + 1;
-								wae<=0;
+								wea<=0;
 								state <= START;
 							end
 						else
 							begin
 								clock_count <= 0;
-								wae<=0;
+								wea<=0;
 								state <= DATA_RX;								
 							end							
 					end
@@ -78,7 +78,7 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 						if(clock_count < CLOCKS_PER_BIT - 1)
 							begin
 								clock_count <= clock_count + 1;
-								wae<=0;
+								wea<=0;
 								state <= DATA_RX;
 							end
 						else
@@ -88,14 +88,14 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 								if(rx_bit_index < 7)
 									begin										
 										rx_bit_index <= rx_bit_index + 1;
-										wae<=0;
+										wea<=0;
 										state <= DATA_RX;
 										clock_count <= 0;
 									end
 								else
 									begin
 										rx_bit_index <= 0;
-										wae<=1;
+										wea<=1;
 										
 										clock_count <= 0;
 										state <= STOP;
@@ -109,13 +109,13 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 						if(clock_count < CLOCKS_PER_BIT - 1)
 							begin
 								clock_count <= clock_count + 1;
-								wae<=0;
+								wea<=0;
 								state <= STOP;
 							end
 						else
 							begin
 								state <= CLEANUP;
-								wae<=0;
+								wea<=0;
 								clock_count <= 0;
 							end
 					end
@@ -125,7 +125,7 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
 						if(clock_count < DELAY - 1)
 							begin
 								clock_count <= clock_count + 1;
-								wae<=0;
+								wea<=0;
 							end
 						else
 							begin
@@ -137,7 +137,7 @@ module UART_RX( switch,clk, rx_in,data_2byte,rx_done,index,wae,com_done/*,indica
                                     com_done<=1;
                                     state<=END;
 								end
-								wae<=0;
+								wea<=0;
 
 								clock_count <= 0;		
 							end

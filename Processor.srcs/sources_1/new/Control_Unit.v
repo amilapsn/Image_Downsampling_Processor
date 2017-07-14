@@ -19,10 +19,11 @@ module Control_Unit
      r2_enable,
      r3_enable,
      pc_enable,
-     mar_enable);
+     mar_enable,
+     addr_select);
      
      
-     
+    output reg addr_select;
     input [15:0]    ir;
     input           clk;
     input r2_flag,r3_flag;
@@ -63,7 +64,9 @@ module Control_Unit
         DIV1=16'd25,
         DIV2 =16'd26,                                                       
         DIV3 =16'd27,
-        STTR1=16'd28,                                                                                             
+        STTR1=16'd28,
+        STTR2=16'd42,
+        STTR3=16'd43,                                                                                             
         SUB1=16'd29,
         SUB2=16'd30,
         SUB3  =16'd31,
@@ -77,6 +80,7 @@ module Control_Unit
         JMPNXT3 = 16'd39,
         NOP=16'd40,
         END=16'd41;
+        //NOP2=16'D42;
 
 
     reg [15:0] PS,NS = FETCH1;
@@ -86,6 +90,7 @@ module Control_Unit
         case (PS)
             FETCH1 : begin 
                         fetch<=1;
+                        addr_select<=0;
                         d_ram<=0; //write to the DRAM
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
@@ -96,8 +101,21 @@ module Control_Unit
                         r3_inc <=0;
                         NS<=FETCH2;
                   end
+            /*NOP2 : begin 
+                        fetch<=1;
+                        d_ram<=0; //write to the DRAM
+                        ALU_control <= 4'b0000;
+                        A_bus<= 3'd0;
+                        load <= 7'b0000000; // mar,pc,tem,r3,r2,r1,ac
+                        pc_inc <=0;
+                        mar_inc<=0;
+                        r2_inc <=0;
+                        r3_inc <=0;
+                        NS<=FETCH2;
+                    end                */
             FETCH2 : begin
                         fetch<=0;
+                        addr_select<=0;
                         d_ram<=0;
                         ALU_control <= 4'b0101;
                         A_bus<= 3'd0;
@@ -111,6 +129,7 @@ module Control_Unit
                     end
             CLALL1 : begin
                         fetch<=0;
+                        addr_select<=0;
                         d_ram<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
@@ -123,6 +142,7 @@ module Control_Unit
                     end
             CLALL2 : begin
                         fetch<=0;
+                        addr_select<=0;
                         d_ram<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
@@ -135,6 +155,7 @@ module Control_Unit
                     end
             MVMARTR1 : begin
                         fetch<=0;
+                        addr_select<=0;
                         d_ram<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b100;
@@ -147,6 +168,7 @@ module Control_Unit
                       end
             MVMARTR2 : begin
                         fetch<=0;
+                        addr_select<=0;
                         d_ram<=0;
                                                                                             
                         ALU_control <= 4'b1000;//pass                                                     
@@ -159,7 +181,8 @@ module Control_Unit
                         NS<= MVMARTR3;
                       end            
             MVMARTR3 : begin                    
-                        fetch<=0;                          
+                        fetch<=0;      
+                        addr_select<=0;                    
                         d_ram<=0;                          
                                                    
                         ALU_control <= 4'b0000;            
@@ -172,7 +195,8 @@ module Control_Unit
                         NS<= FETCH1;
                       end
             LDAC1    : begin                                                                                                                               
-                        fetch<=0;                                              
+                        fetch<=0;      
+                        addr_select<=0;                                        
                         d_ram<=0;                       
                                        
                         ALU_control <= 4'b0000;
@@ -186,11 +210,12 @@ module Control_Unit
                       end
             NOP:
                       begin                          
-                        fetch<=0;                    
+                        fetch<=0;      
+                        addr_select<=0;              
                         d_ram<=0;                    
                                              
                         ALU_control <= 4'b0000;      
-                        A_bus<= 3'b110;              
+                        A_bus <= 3'b110;              
                         load <= 7'b0000000;          
                         pc_inc <= 0;                 
                         mar_inc<=0;                  
@@ -201,7 +226,8 @@ module Control_Unit
                                           
                                 
             LDAC2    :begin                    
-                        fetch<=0;                                               
+                        fetch<=0;      
+                        addr_select<=0;                                         
                         d_ram<=0;                                               
                                                                         
                         ALU_control <= 4'b1000;//pass                                 
@@ -214,7 +240,8 @@ module Control_Unit
                         NS<= LDAC3; 
                       end
             LDAC3    : begin                    
-                        fetch<=0;                                         
+                        fetch<=0;      
+                        addr_select<=0;                                   
                         d_ram<=0;                                    
                                                                  
                         ALU_control <= 4'b0000;             
@@ -227,7 +254,8 @@ module Control_Unit
                         NS<= FETCH1;
                       end                                                                           
             MVACR1   : begin            
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -240,7 +268,8 @@ module Control_Unit
                         NS<= MVACR2;
                         end
             MVACR2   : begin
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b1000;//pass
@@ -253,7 +282,8 @@ module Control_Unit
                         NS<= MVACR3;
                       end
             MVACR3   : begin    
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -266,7 +296,8 @@ module Control_Unit
                         NS<=FETCH1;
                       end
             MARINC1  : begin             
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -279,7 +310,8 @@ module Control_Unit
                         NS<= FETCH1;   
                       end
             MUL1  : begin
-                        fetch<=0;                                      
+                        fetch<=0;      
+                        addr_select<=0;                                
                         d_ram<=0;                                      
                                                                
                         ALU_control <= 4'b0000;                        
@@ -292,7 +324,8 @@ module Control_Unit
                         NS<= MVMARTR2;
                    end          
             MUL2 : begin             
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0100;
@@ -305,7 +338,8 @@ module Control_Unit
                         NS<= MUL3;
                 end         
             MUL3: begin              
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -318,7 +352,8 @@ module Control_Unit
                         NS<= FETCH1;  
                 end       
             ADD1: begin              
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -331,7 +366,8 @@ module Control_Unit
                         NS<= ADD2;
                 end         
             ADD2: begin              
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                         ALU_control <= 4'b0000;
                         A_bus<= 3'b000;        
@@ -343,7 +379,8 @@ module Control_Unit
                         NS<= ADD3;
                 end
             ADD3: begin             
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0001;
@@ -356,7 +393,8 @@ module Control_Unit
                         NS<= ADD4; 
                 end        
             ADD4: begin                
-                        fetch<=0;              
+                        fetch<=0;      
+                        addr_select<=0;        
                         d_ram<=0;              
                                        
                         ALU_control <= 4'b0000;
@@ -369,7 +407,8 @@ module Control_Unit
                         NS<= FETCH1; 
                end
             ADDMAR1:  begin                              
-                         fetch<=0;                                             
+                         fetch<=0;     
+                         addr_select<=0;                                        
                          d_ram<=0;                                                 
                                                                            
                          ALU_control <= 4'b0000;                                   
@@ -382,7 +421,8 @@ module Control_Unit
                          NS<= ADDMAR2;                                              
                    end
             ADDMAR2: begin                                                                                             
-                          fetch<=0;                                                
+                          fetch<=0;     
+                          addr_select<=0;                                           
                           d_ram<=0;                                                
                                                                            
                           ALU_control <= 4'b0110;                                  
@@ -395,7 +435,8 @@ module Control_Unit
                           NS<= ADDMAR3;                                             
                   end 
             ADDMAR3: begin                                                                                           
-                           fetch<=0;                                               
+                           fetch<=0;     
+                           addr_select<=0;                                          
                            d_ram<=0;                                               
                                                                            
                            ALU_control <= 4'b0000;                                 
@@ -408,7 +449,8 @@ module Control_Unit
                            NS<= FETCH1;                                            
                   end
             DIV1 : begin                                                                                           
-                            fetch<=0;                                              
+                            fetch<=0;     
+                            addr_select<=0;                                         
                             d_ram<=0;                                              
                                                                            
                             ALU_control <= 4'b0000;                                
@@ -421,7 +463,8 @@ module Control_Unit
                             NS<= DIV2;                                           
                 end
             DIV2 : begin                                                                                          
-                             fetch<=0;                                             
+                             fetch<=0;     
+                             addr_select<=0;                                        
                              d_ram<=0;                                             
                                                                            
                              ALU_control <= 4'b0011;                               
@@ -434,7 +477,8 @@ module Control_Unit
                              NS<= DIV3;                                          
                  end                                                           
             DIV3 :  begin                               
-                                 fetch<=0;               
+                                 fetch<=0;  
+                                 addr_select<=0;             
                                  d_ram<=0;               
                                                  
                                  ALU_control <= 4'b0000; 
@@ -442,25 +486,28 @@ module Control_Unit
                                  load <= 7'b1000000;     
                                  pc_inc <= 0;            
                                  mar_inc<=0;
+                                 
                                  r2_inc <=0;
                                  r3_inc <=0;             
                                  NS<= FETCH1;              
                  end  
             STTR1:      begin                                                                                              
-                            fetch<=0;                                                                                   
-                            d_ram<=1;                                                                                   
-                                                                                                                
+                            fetch<=0;           
+                            addr_select<=1;                                                                        
+                            d_ram<=1;                                                                                                                                                              
                             ALU_control <= 4'b0000;                                                                     
                             A_bus<= 3'b000;                                                                             
-                            load <= 7'b0000001;                                                                         
+                            load <= 7'b0000100;                                                                         
                             pc_inc <= 0;                                                                                
                             mar_inc<=0;
                             r2_inc <=0;
                             r3_inc <=0;                                                                                 
                             NS<= FETCH1;                                                                                
                      end                                                                                                
-            SUB1:   begin                         
-                            fetch<=0;              
+
+            STTR2:   begin                         
+                            fetch<=0;      
+                            addr_select<=0;        
                             d_ram<=0;              
                                            
                             ALU_control <= 4'b0000;
@@ -472,8 +519,38 @@ module Control_Unit
                             r3_inc <=0;            
                             NS<= SUB2;           
                   end
+
+            STTR3:   begin                         
+                            fetch<=0;      
+                            addr_select<=0;        
+                            d_ram<=0;              
+                                           
+                            ALU_control <= 4'b0000;
+                            A_bus<= 3'b101;        
+                            load <= 7'b0000000;    
+                            pc_inc <= 0;           
+                            mar_inc<=0;
+                            r2_inc <=0;
+                            r3_inc <=0;            
+                            NS<= SUB2;           
+                  end
+            SUB1:   begin                         
+                            fetch<=0;      
+                            addr_select<=0;        
+                            d_ram<=0;              
+                                           
+                            ALU_control <= 4'b0000;
+                            A_bus<= 3'b101;        
+                            load <= 7'b0000000;    
+                            pc_inc <= 0;           
+                            mar_inc<=0;
+                            r2_inc <=0;
+                            r3_inc <=0;            
+                            NS<= SUB2;           
+                  end                  
             SUB2: begin                         
-                            fetch<=0;              
+                            fetch<=0;      
+                            addr_select<=0;        
                             d_ram<=0;              
                                            
                             ALU_control <= 4'b0111;
@@ -486,7 +563,8 @@ module Control_Unit
                             NS<= SUB3;           
                      end
             SUB3  :begin                         
-                            fetch<=0;              
+                            fetch<=0;      
+                            addr_select<=0;        
                             d_ram<=0;              
                                            
                             ALU_control <= 4'b0000;
@@ -499,7 +577,8 @@ module Control_Unit
                             NS<= FETCH1;           
                      end
             INCR2 : begin                         
-                            fetch<=0;              
+                            fetch<=0;      
+                            addr_select<=0;        
                             d_ram<=0;              
                                            
                             ALU_control <= 4'b0000;
@@ -512,7 +591,8 @@ module Control_Unit
                             NS<= FETCH1;            
                      end
             JUMP1 : begin                          
-                            fetch<=0;               
+                            fetch<=0;      
+                            addr_select<=0;         
                             d_ram<=0;               
                                             
                             ALU_control <= 4'b0000; 
@@ -525,7 +605,8 @@ module Control_Unit
                             NS<= JUMP2;            
                      end                            
             JUMP2 : begin                          
-                            fetch<=0;               
+                            fetch<=0;      
+                            addr_select<=0;         
                             d_ram<=0;               
                                             
                             ALU_control <= 4'b1001; 
@@ -540,7 +621,8 @@ module Control_Unit
                                         
                      end
             JUMP3 : begin     
-                            fetch<=0;               
+                            fetch<=0;      
+                            addr_select<=0;         
                             d_ram<=0;               
                                             
                             ALU_control <= 4'b0000; 
@@ -554,7 +636,8 @@ module Control_Unit
                                         
                      end                            
             INCR3:           begin                          
-                            fetch<=0;               
+                            fetch<=0;      
+                            addr_select<=0;         
                             d_ram<=0;               
                                             
                             ALU_control <= 4'b0000; 
@@ -567,7 +650,8 @@ module Control_Unit
                             NS<= FETCH1;            
                      end
             JMPNXT1 : begin                            
-                            fetch<=0;                                                                                                                                                                                                                                                      
+                            fetch<=0;      
+                            addr_select<=0;                                                                                                                                                                                                                                                
                             d_ram<=0;                                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                                                                    
                             ALU_control <= 4'b0000;                                                                                                                                                                                                                                        
@@ -580,7 +664,8 @@ module Control_Unit
                             NS<= JMPNXT2;                                                                                                                                                                                                                                                    
                   end                                                                                                                                                                                                                                                                   
             JMPNXT2 : begin                             
-                            fetch<=0;               
+                            fetch<=0;      
+                            addr_select<=0;         
                             d_ram<=0;               
                                             
                             ALU_control <= 4'b1010; 
@@ -593,7 +678,8 @@ module Control_Unit
                             NS<= (r3_flag==1)? FETCH1:JMPNXT3;             
                   end
             JMPNXT3 : begin                             
-                           fetch<=0;               
+                           fetch<=0;       
+                           addr_select<=0;        
                            d_ram<=0;               
                                            
                            ALU_control <= 4'b0000; 
@@ -610,7 +696,8 @@ module Control_Unit
                   end  
             default:
                         begin                             
-                           fetch<=0;               
+                           fetch<=0;      
+                           addr_select<=0;         
                            d_ram<=0;               
                                            
                            ALU_control <= 4'b0000; 

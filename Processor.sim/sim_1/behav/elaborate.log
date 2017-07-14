@@ -9,6 +9,7 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.addr_mux
 Compiling module xil_defaultlib.UART_RX
 Compiling module xil_defaultlib.Baud_gen
 Compiling module xil_defaultlib.A_Bus
