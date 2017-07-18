@@ -17,9 +17,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6200 
+INFO: Helper process launched with PID 5432 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 317.215 ; gain = 75.070
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 317.695 ; gain = 75.172
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'processor' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Processor.v:3]
 INFO: [Synth 8-638] synthesizing module 'addr_mux' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/addr_mux.v:2]
@@ -44,13 +44,14 @@ INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/GitHub/Image_Downsampling_Pro
 INFO: [Synth 8-256] done synthesizing module 'IRAM' (5#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/IRAM.v:2]
 INFO: [Synth 8-638] synthesizing module 'DRAM_wrapper' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'DRAM' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
-INFO: [Synth 8-638] synthesizing module 'DRAM_blk_mem_gen_0_0' [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-7632-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'DRAM_blk_mem_gen_0_0' (6#1) [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-7632-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'DRAM_blk_mem_gen_0_0' [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-3096-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'DRAM_blk_mem_gen_0_0' (6#1) [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-3096-AquirePC/realtime/DRAM_blk_mem_gen_0_0_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'DRAM' (7#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM.v:13]
 INFO: [Synth 8-256] done synthesizing module 'DRAM_wrapper' (8#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/hdl/DRAM_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'Memory_Control' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:2]
 INFO: [Synth 8-256] done synthesizing module 'Memory_Control' (9#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Memory_Control.v:2]
 INFO: [Synth 8-638] synthesizing module 'ALU' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:2]
+WARNING: [Synth 8-567] referenced signal 'C_bus' should be on the sensitivity list [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:9]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (10#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:2]
 INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:2]
 	Parameter FETCH1 bound to: 16'b0000000000000001 
@@ -96,7 +97,7 @@ INFO: [Synth 8-638] synthesizing module 'Control_Unit' [D:/GitHub/Image_Downsamp
 	Parameter JMPNXT3 bound to: 16'b0000000000100111 
 	Parameter NOP bound to: 16'b0000000000101000 
 	Parameter END bound to: 16'b0000000000101001 
-WARNING: [Synth 8-6014] Unused sequential element PS_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:89]
+WARNING: [Synth 8-6014] Unused sequential element PS_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:90]
 INFO: [Synth 8-256] done synthesizing module 'Control_Unit' (11#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:2]
 INFO: [Synth 8-638] synthesizing module 'AC_Reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
 INFO: [Synth 8-256] done synthesizing module 'AC_Reg' (12#1) [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/AC_Reg.v:3]
@@ -114,7 +115,7 @@ INFO: [Synth 8-256] done synthesizing module 'processor' (18#1) [D:/GitHub/Image
 WARNING: [Synth 8-3331] design UART_RX has unconnected port switch
 WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 357.293 ; gain = 115.148
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 357.773 ; gain = 115.250
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -124,15 +125,15 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 357.293 ; gain = 115.148
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 357.773 ; gain = 115.250
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-7632-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
-Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-7632-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-3096-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
+Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/.Xil/Vivado-3096-AquirePC/dcp3/DRAM_blk_mem_gen_0_0_in_context.xdc] for cell 'dram/DRAM_i/blk_mem_gen_0'
 Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
@@ -140,16 +141,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.115 . Memory (MB): peak = 658.504 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 658.984 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -157,7 +158,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property DONT_TOUCH = true for dram/DRAM_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for dram/DRAM_i/blk_mem_gen_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'UART_RX'
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
@@ -172,10 +173,10 @@ WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [D:/Gi
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Baud_gen.v:17]
 INFO: [Synth 8-5546] ROM "iram" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "C_bus" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'wea_cu_reg' into 'addr_select_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:94]
-INFO: [Synth 8-4471] merging register 'pc_inc_reg' into 'fetch_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:98]
-WARNING: [Synth 8-6014] Unused sequential element wea_cu_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:94]
-WARNING: [Synth 8-6014] Unused sequential element pc_inc_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:98]
+INFO: [Synth 8-4471] merging register 'wea_cu_reg' into 'addr_select_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:95]
+INFO: [Synth 8-4471] merging register 'pc_inc_reg' into 'fetch_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:99]
+WARNING: [Synth 8-6014] Unused sequential element wea_cu_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:95]
+WARNING: [Synth 8-6014] Unused sequential element pc_inc_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Control_Unit.v:99]
 INFO: [Synth 8-5546] ROM "fetch" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "process_over_led" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-6014] Unused sequential element d_out_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/R8_bit.v:15]
@@ -195,11 +196,11 @@ WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Gi
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'UART_RX'
 WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/Rx.v:37]
 WARNING: [Synth 8-327] inferring latch for variable 'd_out_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/A_Bus.v:9]
-WARNING: [Synth 8-327] inferring latch for variable 'C_bus_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:12]
-WARNING: [Synth 8-327] inferring latch for variable 'r2_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:21]
-WARNING: [Synth 8-327] inferring latch for variable 'r3_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'C_bus_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:11]
+WARNING: [Synth 8-327] inferring latch for variable 'r2_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:20]
+WARNING: [Synth 8-327] inferring latch for variable 'r3_flag_reg' [D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/new/ALU.v:28]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:23 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -240,12 +241,12 @@ Detailed RTL Component Info :
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	   5 Input      3 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
 	  44 Input      3 Bit        Muxes := 2     
 	   5 Input      1 Bit        Muxes := 7     
 	   8 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 12    
-	  11 Input      1 Bit        Muxes := 3     
+	  12 Input      1 Bit        Muxes := 3     
 	  44 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -310,7 +311,7 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 3     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-	  11 Input      1 Bit        Muxes := 3     
+	  12 Input      1 Bit        Muxes := 3     
 Module Control_Unit 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -321,7 +322,7 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 2     
 	  44 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
 	  44 Input      3 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
@@ -381,8 +382,6 @@ WARNING: [Synth 8-3331] design processor has unconnected port MEMORY_ON
 WARNING: [Synth 8-3331] design processor has unconnected port switch
 INFO: [Synth 8-3886] merging instance 'cu/load_reg[4]' (FDE_1) to 'cu/load_reg[3]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/r3_inc_reg )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r3_flag_reg )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\alu/r2_flag_reg )
 INFO: [Synth 8-3886] merging instance 'cu/NS_reg[12]' (FDE_1) to 'cu/NS_reg[15]'
 INFO: [Synth 8-3886] merging instance 'cu/NS_reg[11]' (FDE_1) to 'cu/NS_reg[15]'
 INFO: [Synth 8-3886] merging instance 'cu/NS_reg[13]' (FDE_1) to 'cu/NS_reg[15]'
@@ -394,13 +393,11 @@ INFO: [Synth 8-3886] merging instance 'cu/NS_reg[8]' (FDE_1) to 'cu/NS_reg[10]'
 INFO: [Synth 8-3886] merging instance 'cu/NS_reg[10]' (FDE_1) to 'cu/NS_reg[9]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cu/NS_reg[9] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rx/com_done_reg )
-WARNING: [Synth 8-3332] Sequential element (alu/r2_flag_reg) is unused and will be removed from module processor.
-WARNING: [Synth 8-3332] Sequential element (alu/r3_flag_reg) is unused and will be removed from module processor.
 WARNING: [Synth 8-3332] Sequential element (cu/r3_inc_reg) is unused and will be removed from module processor.
 WARNING: [Synth 8-3332] Sequential element (cu/NS_reg[9]) is unused and will be removed from module processor.
 WARNING: [Synth 8-3332] Sequential element (rx/com_done_reg) is unused and will be removed from module processor.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -412,13 +409,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -430,7 +427,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:37 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -454,7 +451,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -467,7 +464,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -479,25 +476,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -518,14 +515,14 @@ Report Cell Usage:
 |2     |BUFG                 |     2|
 |3     |CARRY4               |    30|
 |4     |LUT1                 |    75|
-|5     |LUT2                 |    25|
-|6     |LUT3                 |    93|
-|7     |LUT4                 |    22|
-|8     |LUT5                 |    50|
-|9     |LUT6                 |   139|
-|10    |MUXF7                |     2|
+|5     |LUT2                 |    24|
+|6     |LUT3                 |    92|
+|7     |LUT4                 |    19|
+|8     |LUT5                 |    25|
+|9     |LUT6                 |   177|
+|10    |MUXF7                |     4|
 |11    |FDRE                 |   290|
-|12    |LD                   |    32|
+|12    |LD                   |    34|
 |13    |IBUF                 |     4|
 |14    |OBUF                 |    19|
 +------+---------------------+------+
@@ -534,20 +531,20 @@ Report Instance Areas:
 +------+-----------+---------------+------+
 |      |Instance   |Module         |Cells |
 +------+-----------+---------------+------+
-|1     |top        |               |   799|
+|1     |top        |               |   811|
 |2     |  MAR      |MAR_Reg        |    35|
 |3     |  AC       |AC_Reg         |    16|
 |4     |  IR       |IR_Reg         |     6|
 |5     |  PC       |R16_bit_inc    |    41|
-|6     |  R1       |R16_bit        |    26|
-|7     |  R2       |R8_bit         |    17|
+|6     |  R1       |R16_bit        |    25|
+|7     |  R2       |R8_bit         |    19|
 |8     |  R3       |R8_bit_0       |     8|
 |9     |  TEM      |R16_bit_1      |    32|
 |10    |  addr_mux |addr_mux       |    32|
-|11    |  alu      |ALU            |    29|
+|11    |  alu      |ALU            |    30|
 |12    |  baud     |Baud_gen       |    22|
-|13    |  busA     |A_Bus          |    59|
-|14    |  cu       |Control_Unit   |   157|
+|13    |  busA     |A_Bus          |    61|
+|14    |  cu       |Control_Unit   |   165|
 |15    |  dram     |DRAM_wrapper   |    16|
 |16    |    DRAM_i |DRAM           |    16|
 |17    |  iram     |IRAM           |     6|
@@ -555,23 +552,23 @@ Report Instance Areas:
 |19    |  rx       |UART_RX        |   205|
 +------+-----------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 658.504 ; gain = 115.148
-Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 658.504 ; gain = 416.359
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 658.984 ; gain = 115.250
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 658.984 ; gain = 416.461
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 66 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 68 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 32 instances were transformed.
-  LD => LDCE: 32 instances
+  A total of 34 instances were transformed.
+  LD => LDCE: 34 instances
 
-81 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
+79 Infos, 30 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:42 . Memory (MB): peak = 658.504 ; gain = 421.109
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 658.984 ; gain = 422.492
 INFO: [Common 17-1381] The checkpoint 'D:/GitHub/Image_Downsampling_Processor/Processor.runs/synth_1/processor.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 658.504 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat Jul 15 15:34:36 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.073 . Memory (MB): peak = 658.984 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 18 11:22:32 2017...

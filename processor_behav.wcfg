@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15452880000fs"></ZoomStartTime>
-      <ZoomEndTime time="17494254312fs"></ZoomEndTime>
-      <Cursor1Time time="11300000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="51496267229fs"></ZoomEndTime>
+      <Cursor1Time time="193000000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="123"></NameColumnWidth>
+      <NameColumnWidth column_width="136"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="47" />
+   <WVObjectSize size="40" />
    <wvobject fp_name="/processor/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,14 +27,12 @@
    <wvobject fp_name="/processor/cu/PS" type="array">
       <obj_property name="ElementShortName">PS[15:0]</obj_property>
       <obj_property name="ObjectShortName">PS[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/cu/NS" type="array">
       <obj_property name="ElementShortName">NS[15:0]</obj_property>
       <obj_property name="ObjectShortName">NS[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/PC/d_out" type="array">
-      <obj_property name="ElementShortName">d_out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">d_out[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/fetch_enable" type="logic">
       <obj_property name="ElementShortName">fetch_enable</obj_property>
@@ -49,42 +47,56 @@
       <obj_property name="ElementShortName">d_out[15:0]</obj_property>
       <obj_property name="ObjectShortName">d_out[15:0]</obj_property>
       <obj_property name="label">PC</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/ir_to_cu" type="array">
       <obj_property name="ElementShortName">ir_to_cu[15:0]</obj_property>
       <obj_property name="ObjectShortName">ir_to_cu[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/iram_to_ir" type="array">
       <obj_property name="ElementShortName">iram_to_ir[15:0]</obj_property>
       <obj_property name="ObjectShortName">iram_to_ir[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/Abus" type="array">
       <obj_property name="ElementShortName">Abus[15:0]</obj_property>
       <obj_property name="ObjectShortName">Abus[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/Cbus" type="array">
       <obj_property name="ElementShortName">Cbus[15:0]</obj_property>
       <obj_property name="ObjectShortName">Cbus[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/addr_mar" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">addr_mar[15:0]</obj_property>
       <obj_property name="ObjectShortName">addr_mar[15:0]</obj_property>
+      <obj_property name="label">mar</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/addr_tem" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">addr_tem[15:0]</obj_property>
       <obj_property name="ObjectShortName">addr_tem[15:0]</obj_property>
+      <obj_property name="label">tem</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/addr" type="array">
       <obj_property name="ElementShortName">addr[15:0]</obj_property>
       <obj_property name="ObjectShortName">addr[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/dram/dina" type="array">
       <obj_property name="ElementShortName">dina[15:0]</obj_property>
       <obj_property name="ObjectShortName">dina[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/dram/douta" type="array">
       <obj_property name="ElementShortName">douta[15:0]</obj_property>
       <obj_property name="ObjectShortName">douta[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/wea" type="logic">
       <obj_property name="ElementShortName">wea</obj_property>
@@ -93,6 +105,8 @@
    <wvobject fp_name="vbus99" type="vbus">
       <obj_property name="label">load</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       <wvobject fp_name="/processor/ac_enable" type="logic">
          <obj_property name="ElementShortName">ac_enable</obj_property>
          <obj_property name="ObjectShortName">ac_enable</obj_property>
@@ -126,30 +140,6 @@
          <obj_property name="ObjectShortName">ir_enable</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="/processor/rx_byte" type="array">
-      <obj_property name="ElementShortName">rx_byte[15:0]</obj_property>
-      <obj_property name="ObjectShortName">rx_byte[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/RX" type="logic">
-      <obj_property name="ElementShortName">RX</obj_property>
-      <obj_property name="ObjectShortName">RX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/data_2byte" type="array">
-      <obj_property name="ElementShortName">data_2byte[15:0]</obj_property>
-      <obj_property name="ObjectShortName">data_2byte[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/MEMORY_ON" type="logic">
-      <obj_property name="ElementShortName">MEMORY_ON</obj_property>
-      <obj_property name="ObjectShortName">MEMORY_ON</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/rx_done" type="logic">
-      <obj_property name="ElementShortName">rx_done</obj_property>
-      <obj_property name="ObjectShortName">rx_done</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor/com_done" type="logic">
-      <obj_property name="ElementShortName">com_done</obj_property>
-      <obj_property name="ObjectShortName">com_done</obj_property>
-   </wvobject>
    <wvobject fp_name="/processor/process_over_led" type="logic">
       <obj_property name="ElementShortName">process_over_led</obj_property>
       <obj_property name="ObjectShortName">process_over_led</obj_property>
@@ -157,46 +147,57 @@
    <wvobject fp_name="/processor/Tx" type="array">
       <obj_property name="ElementShortName">Tx[15:0]</obj_property>
       <obj_property name="ObjectShortName">Tx[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/DRAM_wire" type="array">
       <obj_property name="ElementShortName">DRAM_wire[15:0]</obj_property>
       <obj_property name="ObjectShortName">DRAM_wire[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/ac_to_memory" type="array">
       <obj_property name="ElementShortName">ac_to_memory[15:0]</obj_property>
       <obj_property name="ObjectShortName">ac_to_memory[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/mem_in" type="array">
       <obj_property name="ElementShortName">mem_in[15:0]</obj_property>
       <obj_property name="ObjectShortName">mem_in[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/mem_out" type="array">
       <obj_property name="ElementShortName">mem_out[15:0]</obj_property>
       <obj_property name="ObjectShortName">mem_out[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/from_ac" type="array">
       <obj_property name="ElementShortName">from_ac[15:0]</obj_property>
       <obj_property name="ObjectShortName">from_ac[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/from_pc" type="array">
       <obj_property name="ElementShortName">from_pc[15:0]</obj_property>
       <obj_property name="ObjectShortName">from_pc[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/from_r2" type="array">
       <obj_property name="ElementShortName">from_r2[7:0]</obj_property>
       <obj_property name="ObjectShortName">from_r2[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/from_r3" type="array">
       <obj_property name="ElementShortName">from_r3[7:0]</obj_property>
       <obj_property name="ObjectShortName">from_r3[7:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/ALU_control" type="array">
       <obj_property name="ElementShortName">ALU_control[3:0]</obj_property>
       <obj_property name="ObjectShortName">ALU_control[3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/A_control" type="array">
       <obj_property name="ElementShortName">A_control[2:0]</obj_property>
       <obj_property name="ObjectShortName">A_control[2:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor/alu_r2_flag" type="logic">
       <obj_property name="ElementShortName">alu_r2_flag</obj_property>

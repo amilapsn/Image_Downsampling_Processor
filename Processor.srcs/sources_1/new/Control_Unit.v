@@ -83,7 +83,8 @@ module Control_Unit
         //NOP2=16'D42;
 
 
-    reg [15:0] PS,NS = FETCH1;
+    reg [15:0] NS = 0;
+    reg [15:0] PS=0;
     assign {ac_enable, r1_enable,r2_enable, r3_enable, tem_enable,pc_enable,mar_enable}=load ;
     always@(negedge clk ) begin
         PS=NS;
@@ -146,7 +147,7 @@ module Control_Unit
                         wea_cu<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
-                        load <= 7'b1111111;
+                        load <= 7'b1111101;
                         pc_inc <= 0;
                         mar_inc<=0;
                         r2_inc <=0;
@@ -158,7 +159,7 @@ module Control_Unit
                         addr_select<=0;
                         wea_cu<=0;
                         ALU_control <= 4'b0000;
-                        A_bus<= 3'b100;
+                        A_bus<= 3'b101;
                         load <= 7'b0000000;
                         pc_inc <= 0;
                         mar_inc<=0;
@@ -185,7 +186,7 @@ module Control_Unit
                         addr_select<=0;                    
                         wea_cu<=0;                          
                                                    
-                        ALU_control <= 4'b0000;            
+                        ALU_control <= 4'b1000;            
                         A_bus<= 3'b000;                    
                         load <= 7'b0000100;//load                
                         pc_inc <= 0;                       
@@ -427,7 +428,7 @@ module Control_Unit
                                                                            
                           ALU_control <= 4'b0110;                                  
                           A_bus<= 3'b000;                                          
-                          load <= 7'b0000000;                                      
+                          load <= 7'b0000001;                                      
                           pc_inc <= 0;                                             
                           mar_inc<=0;
                           r2_inc <=0;
@@ -439,7 +440,7 @@ module Control_Unit
                            addr_select<=0;                                          
                            wea_cu<=0;                                               
                                                                            
-                           ALU_control <= 4'b0000;                                 
+                           ALU_control <= 4'b1111;                                 
                            A_bus<= 3'b000;                                         
                            load <= 7'b0000001;                                     
                            pc_inc <= 0;                                            
