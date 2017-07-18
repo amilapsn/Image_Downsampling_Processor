@@ -27,6 +27,7 @@ always@(posedge clk) begin
         d_out <= mem_out;//tx
     else
         A_bus_out<= mem_out;
+        addr<=addr_proc;
 end
 
 endmodule

@@ -6,7 +6,7 @@ output reg [15:0] d_out=0;
 
 always@(posedge clk)
     begin
-        if (enable)
+        if (enable==1)
             d_out <= d_in;
         if (inc)
             d_out <= d_out + 1;
