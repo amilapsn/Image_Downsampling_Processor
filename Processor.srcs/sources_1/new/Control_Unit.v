@@ -66,13 +66,15 @@ module Control_Unit
         DIV3 =16'd27,
         STTR1=16'd28,
         STTR2=16'd42,
-        STTR3=16'd43,                                                                                             
+        STTR3=16'd43, 
+        STTR4=16'd44,                                                                                            
         SUB1=16'd29,
         SUB2=16'd30,
         SUB3  =16'd31,
         INCR2 = 16'd32,
         JUMP1 = 16'd33,                             
         JUMP2 = 16'd34,
+        JUMP25 = 16'd45,
         JUMP3 = 16'd35,                            
         INCR3 = 16'd36,    
         JMPNXT1 = 16'd37,                                                                                                                                                                                                                                                                   
@@ -509,7 +511,7 @@ module Control_Unit
             STTR2:   begin                         
                             fetch<=0;      
                             addr_select<=1;        
-                            wea_cu<=1;              
+                            wea_cu<=0;              
                                            
                             ALU_control <= 4'b0000;
                             A_bus<= 3'b101;        
@@ -522,6 +524,21 @@ module Control_Unit
                   end
 
             STTR3:   begin                         
+                            fetch<=0;      
+                            addr_select<=1;        
+                            wea_cu<=1;              
+                                           
+                            ALU_control <= 4'b0000;
+                            A_bus<= 3'b101;        
+                            load <= 7'b0000000;    
+                            pc_inc <= 0;           
+                            mar_inc<=0;
+                            r2_inc <=0;
+                            r3_inc <=0;            
+                            NS<= STTR4;           
+                  end
+
+            STTR4:   begin                         
                             fetch<=0;      
                             addr_select<=1;        
                             wea_cu<=1;              
@@ -568,7 +585,7 @@ module Control_Unit
                             addr_select<=0;        
                             wea_cu<=0;              
                                            
-                            ALU_control <= 4'b0000;
+                            ALU_control <= 4'b1111;
                             A_bus<= 3'b000;        
                             load <= 7'b0000001;    
                             pc_inc <= 0;           
@@ -618,9 +635,26 @@ module Control_Unit
                             r2_inc <=0;
                             r3_inc <=0;             
                             //NS<= JUMP3;
-                            NS<= (r2_flag==1)? FETCH1:JUMP3;
+                            NS<= JUMP25;
                                         
                      end
+
+            JUMP25 : begin                          
+                            fetch<=0;      
+                            addr_select<=0;         
+                            wea_cu<=0;               
+                                            
+                            ALU_control <= 4'b1111; 
+                            A_bus<= 3'b000;         
+                            load <= 7'b0000000;     
+                            pc_inc <= 0;            
+                            mar_inc<=0;
+                            r2_inc <=0;
+                            r3_inc <=0;             
+                            //NS<= JUMP3;
+                            NS<= (r2_flag==1)? FETCH1:JUMP3;
+                                        
+                     end                     
             JUMP3 : begin     
                             fetch<=0;      
                             addr_select<=0;         

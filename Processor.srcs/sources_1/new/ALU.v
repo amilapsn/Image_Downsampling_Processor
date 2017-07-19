@@ -22,6 +22,7 @@ always@(A_bus or B_bus or ALU_control or C_bus) begin
                        end
                        else
                         r2_flag<=0;
+                        C_bus<=16'd1;//?
                  end
         4'b1010: begin if(A_bus==16'd127)
                                 begin                
