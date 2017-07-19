@@ -232,7 +232,7 @@ module Control_Unit
                         wea_cu<=0;                                               
                                                                         
                         ALU_control <= 4'b1000;//pass                                 
-                        A_bus<= 3'b000;                                         
+                        A_bus<= 3'b110;                                         
                         load <= 7'b0000000;                                     
                         pc_inc <= 0;                                            
                         mar_inc<=0;
@@ -322,7 +322,7 @@ module Control_Unit
                         mar_inc<=0;
                         r2_inc <=0;
                         r3_inc <=0;                                    
-                        NS<= MVMARTR2;
+                        NS<= MUL2;
                    end          
             MUL2 : begin             
                         fetch<=0;      
@@ -343,7 +343,7 @@ module Control_Unit
                         addr_select<=0;        
                         wea_cu<=0;              
                                        
-                        ALU_control <= 4'b0000;
+                        ALU_control <= 4'b1111;
                         A_bus<= 3'b000;        
                         load <= 7'b1000000;    
                         pc_inc <= 0;           
@@ -371,7 +371,7 @@ module Control_Unit
                         addr_select<=0;        
                         wea_cu<=0;              
                         ALU_control <= 4'b0000;
-                        A_bus<= 3'b000;        
+                        A_bus<= 3'b0001;        
                         load <= 7'b0000000;    
                         pc_inc <= 0;           
                         mar_inc<=0;
@@ -386,7 +386,7 @@ module Control_Unit
                                        
                         ALU_control <= 4'b0001;
                         A_bus<= 3'b000;        
-                        load <= 7'b0000000;    
+                        load <= 7'b0100000;    
                         pc_inc <= 0;           
                         mar_inc<=0;
                         r2_inc <=0;
@@ -398,7 +398,7 @@ module Control_Unit
                         addr_select<=0;        
                         wea_cu<=0;              
                                        
-                        ALU_control <= 4'b0000;
+                        ALU_control <= 4'b0001;
                         A_bus<= 3'b000;        
                         load <= 7'b0100000;    
                         pc_inc <= 0;           

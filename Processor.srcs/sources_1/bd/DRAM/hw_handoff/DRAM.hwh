@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 18 22:28:03 2017" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Jul 19 05:06:40 2017" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="DRAM" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -185,7 +185,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_clka">
+        <PORT DIR="I" NAME="clka" SIGIS="clk" SIGNAME="External_Ports_clka">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="clka"/>
           </CONNECTIONS>

@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
--- Date        : Sat Jul 15 17:28:45 2017
+-- Date        : Wed Jul 19 05:09:13 2017
 -- Host        : AquirePC running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               D:/GitHub/Image_Downsampling_Processor/Processor.srcs/sources_1/bd/DRAM/ip/DRAM_blk_mem_gen_0_0/DRAM_blk_mem_gen_0_0_stub.vhdl
