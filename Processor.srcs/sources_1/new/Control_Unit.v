@@ -75,7 +75,10 @@ module Control_Unit
         JUMP1 = 16'd33,                             
         JUMP2 = 16'd34,
         JUMP25 = 16'd45,
-        JUMP3 = 16'd35,                            
+        JUMP3 = 16'd35,
+        ADDMARR1 = 16'd46,
+        ADDMARR2 = 16'd47,
+        ADDMARR3 = 16'd48,                            
         INCR3 = 16'd36,    
         JMPNXT1 = 16'd37,                                                                                                                                                                                                                                                                   
         JMPNXT2 = 16'd38,
@@ -669,7 +672,50 @@ module Control_Unit
                             r3_inc <=0;             
                             NS<= FETCH1;
                                         
-                     end                            
+                     end 
+                     
+                    ADDMARR1:  begin                              
+                                  fetch<=0;     
+                                  addr_select<=0;                                        
+                                  wea_cu<=0;                                                 
+                                                                                    
+                                  ALU_control <= 4'b0000;                                   
+                                  A_bus<= 3'b101;                                           
+                                  load <= 7'b0000000;                                       
+                                  pc_inc <= 0;                                              
+                                  mar_inc<=0;
+                                  r2_inc <=0;
+                                  r3_inc <=0;                                               
+                                  NS<= ADDMAR2;                                              
+                            end
+                     ADDMARR2: begin                                                                                             
+                                   fetch<=0;     
+                                   addr_select<=0;                                           
+                                   wea_cu<=0;                                                
+                                                                                    
+                                   ALU_control <= 4'b0010;                                  
+                                   A_bus<= 3'b000;                                          
+                                   load <= 7'b0000001;                                      
+                                   pc_inc <= 0;                                             
+                                   mar_inc<=0;
+                                   r2_inc <=0;
+                                   r3_inc <=0;                                              
+                                   NS<= ADDMAR3;                                             
+                           end 
+                     ADDMARR3: begin                                                                                           
+                                    fetch<=0;     
+                                    addr_select<=0;                                          
+                                    wea_cu<=0;                                               
+                                                                                    
+                                    ALU_control <= 4'b1111;                                 
+                                    A_bus<= 3'b000;                                         
+                                    load <= 7'b0000001;                                     
+                                    pc_inc <= 0;                                            
+                                    mar_inc<=0;
+                                    r2_inc <=0;
+                                    r3_inc <=0;                                             
+                                    NS<= FETCH1;                                            
+                           end                                                
             INCR3:           begin                          
                             fetch<=0;      
                             addr_select<=0;         

@@ -24,6 +24,7 @@ always@(A_bus or B_bus or ALU_control or C_bus) begin
                         r2_flag<=0;
                         C_bus<=16'd1;//?
                  end
+        4'b0010: C_bus <= A_bus +258; //add mar 258
         4'b1010: begin if(A_bus==16'd127)
                                 begin                
                                      r3_flag<=1;      
