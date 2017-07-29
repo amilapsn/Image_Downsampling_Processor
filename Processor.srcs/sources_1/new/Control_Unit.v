@@ -75,6 +75,7 @@ module Control_Unit
         JUMP1 = 16'd33,                             
         JUMP2 = 16'd34,
         JUMP25 = 16'd45,
+        RESETR2 = 16'd49,
         JUMP3 = 16'd35,
         ADDMARR1 = 16'd46,
         ADDMARR2 = 16'd47,
@@ -82,10 +83,11 @@ module Control_Unit
         INCR3 = 16'd36,    
         JMPNXT1 = 16'd37,                                                                                                                                                                                                                                                                   
         JMPNXT2 = 16'd38,
+        JMPNXT25 = 16'd51,
         JMPNXT3 = 16'd39,
         NOP=16'd40,
-        END=16'd41;
-        //NOP2=16'D42;
+        END=16'd41,
+        NOP2=16'D50;
 
 
     reg [15:0] NS = 0;
@@ -105,9 +107,9 @@ module Control_Unit
                         mar_inc<=0;
                         r2_inc <=0;
                         r3_inc <=0;
-                        NS<=FETCH2;
+                        NS<=NOP2;
                   end
-            /*NOP2 : begin 
+            NOP2 : begin 
                         fetch<=1;
                         wea_cu<=0; //write to the DRAM
                         ALU_control <= 4'b0000;
@@ -118,7 +120,7 @@ module Control_Unit
                         r2_inc <=0;
                         r3_inc <=0;
                         NS<=FETCH2;
-                    end                */
+                    end                
             FETCH2 : begin
                         fetch<=0;
                         addr_select<=0;
@@ -152,7 +154,7 @@ module Control_Unit
                         wea_cu<=0;
                         ALU_control <= 4'b0000;
                         A_bus<= 3'd0;
-                        load <= 7'b1111101;
+                        load <= 7'b1111111;
                         pc_inc <= 0;
                         mar_inc<=0;
                         r2_inc <=0;
@@ -655,9 +657,24 @@ module Control_Unit
                             r2_inc <=0;
                             r3_inc <=0;             
                             //NS<= JUMP3;
-                            NS<= (r2_flag==1)? FETCH1:JUMP3;
+                            NS<= (r2_flag==1)? RESETR2:JUMP3;
                                         
-                     end                     
+                     end                
+            RESETR2 : begin                          
+                         fetch<=0;      
+                         addr_select<=0;         
+                         wea_cu<=0;               
+                                         
+                         ALU_control <= 4'b0000; 
+                         A_bus<= 3'b000;         
+                         load <= 7'b0010000;     
+                         pc_inc <= 0;            
+                         mar_inc<=0;
+                         r2_inc <=0;
+                         r3_inc <=0;             
+                         //NS<= JUMP3;
+                         NS<= FETCH1;   
+                     end  
             JUMP3 : begin     
                             fetch<=0;      
                             addr_select<=0;         
@@ -686,7 +703,7 @@ module Control_Unit
                                   mar_inc<=0;
                                   r2_inc <=0;
                                   r3_inc <=0;                                               
-                                  NS<= ADDMAR2;                                              
+                                  NS<= ADDMARR2;                                              
                             end
                      ADDMARR2: begin                                                                                             
                                    fetch<=0;     
@@ -700,7 +717,7 @@ module Control_Unit
                                    mar_inc<=0;
                                    r2_inc <=0;
                                    r3_inc <=0;                                              
-                                   NS<= ADDMAR3;                                             
+                                   NS<= ADDMARR3;                                             
                            end 
                      ADDMARR3: begin                                                                                           
                                     fetch<=0;     
@@ -725,55 +742,76 @@ module Control_Unit
                             A_bus<= 3'b000;         
                             load <= 7'b0000000;     
                             pc_inc <= 0;            
-                            mar_inc<=1;
+                            mar_inc<=0;
                             r2_inc <=0;
-                            r3_inc <=0;             
+                            r3_inc <=1;             
                             NS<= FETCH1;            
                      end
-            JMPNXT1 : begin                            
-                            fetch<=0;      
-                            addr_select<=0;                                                                                                                                                                                                                                                
-                            wea_cu<=0;                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                   
-                            ALU_control <= 4'b0000;                                                                                                                                                                                                                                        
-                            A_bus<= 3'b001;                                                                                                                                                                                                                                                
-                            load <= 7'b0000000;                                                                                                                                                                                                                                            
-                            pc_inc <= 0;                                                                                                                                                                                                                                                   
-                            mar_inc<=0;                                                                                                                                                                                                                                                    
-                            r2_inc <=0;                                                                                                                                                                                                                                                    
-                            r3_inc <=0;                                                                                                                                                                                                                                                    
-                            NS<= JMPNXT2;                                                                                                                                                                                                                                                    
-                  end                                                                                                                                                                                                                                                                   
-            JMPNXT2 : begin                             
-                            fetch<=0;      
-                            addr_select<=0;         
-                            wea_cu<=0;               
-                                            
-                            ALU_control <= 4'b1010; 
-                            A_bus<= 3'b000;         
-                            load <= 7'b0000000;     
-                            pc_inc <= 0;            
-                            mar_inc<=0;             
-                            r2_inc <=0;             
-                            r3_inc <=0;             
-                            NS<= (r3_flag==1)? FETCH1:JMPNXT3;             
-                  end
-            JMPNXT3 : begin                             
-                           fetch<=0;       
-                           addr_select<=0;        
-                           wea_cu<=0;               
-                                           
-                           ALU_control <= 4'b0000; 
-                           A_bus<= 3'b000;         
-                           load <= 7'b0000010;     
-                           pc_inc <= 0;            
-                           mar_inc<=0;             
-                           r2_inc <=0;             
-                           r3_inc <=0;             
-                           NS<= FETCH1;             
+            JMPNXT1 : begin                          
+                             fetch<=0;      
+                             addr_select<=0;         
+                             wea_cu<=0;               
+                                             
+                             ALU_control <= 4'b0000; 
+                             A_bus<= 3'b001;         
+                             load <= 7'b0000000;     
+                             pc_inc <= 0;            
+                             mar_inc<=0;
+                             r2_inc <=0;             
+                             r3_inc <=0;
+                             NS<= JMPNXT2;            
+                      end                            
+             JMPNXT2 : begin                          
+                             fetch<=0;      
+                             addr_select<=0;         
+                             wea_cu<=0;               
+                                             
+                             ALU_control <= 4'b1010; 
+                             A_bus<= 3'b000;         
+                             load <= 7'b0000000;     
+                             pc_inc <= 0;            
+                             mar_inc<=0;
+                             r2_inc <=0;
+                             r3_inc <=0;             
+                             //NS<= JUMP3;
+                             NS<= JMPNXT25;
+                                         
+                      end
+ 
+             JMPNXT25 : begin                          
+                             fetch<=0;      
+                             addr_select<=0;         
+                             wea_cu<=0;               
+                                             
+                             ALU_control <= 4'b1111; 
+                             A_bus<= 3'b000;         
+                             load <= 7'b0000000;     
+                             pc_inc <= 0;            
+                             mar_inc<=0;
+                             r2_inc <=0;
+                             r3_inc <=0;             
+                             //NS<= JUMP3;
+                             NS<= (r3_flag==1)? FETCH1:JMPNXT3;
+                                         
+                      end                
+              
+             JMPNXT3 : begin     
+                             fetch<=0;      
+                             addr_select<=0;         
+                             wea_cu<=0;               
+                                             
+                             ALU_control <= 4'b0000; 
+                             A_bus<= 3'b000;         
+                             load <= 7'b0000010;     
+                             pc_inc <= 0;            
+                             mar_inc<=0;
+                             r2_inc <=0;
+                             r3_inc <=0;             
+                             NS<= FETCH1;             
                     end   
             END: begin
                   process_over_led <=1;
+                  NS<=END;
                   end  
             default:
                         begin                             

@@ -6,7 +6,7 @@ module IR_Reg
     
     input[15:0] i_in;
     input clk;
-    output reg [15:0] i_out;
+    output reg [15:0] i_out=16'd0;
     
     always@(posedge clk) i_out <= i_in;
         
