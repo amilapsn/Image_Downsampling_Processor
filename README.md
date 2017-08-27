@@ -11,7 +11,8 @@
 * [References](#references)
 
 
-```python%matplotlib inline
+```python
+%matplotlib inline
 import serial
 import numpy as np
 from matplotlib import pyplot as plt
