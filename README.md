@@ -11,8 +11,7 @@
 * [References](#references)
 
 
-```python
-%matplotlib inline
+```python%matplotlib inline
 import serial
 import numpy as np
 from matplotlib import pyplot as plt
@@ -28,7 +27,7 @@ from IPython.display import SVG
 
 
 
-![png](algo1.png)
+![png](algo1.PNG)
 
 
 
@@ -38,7 +37,7 @@ from IPython.display import SVG
 
 
 
-![png](algo2.png)
+![png](algo2.PNG)
 
 
 
