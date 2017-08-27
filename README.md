@@ -3,12 +3,12 @@
 
 ## Contents
 
-* [Algorithm](#Algorithm)
-* [Generation of data to IRAM and DRAM](#Generation-of-data-to-IRAM-and-DRAM)
-* [Simulation](#Simulation)
-* [Process Log](#Process-Log)
-* [UART things](#UART-things)
-* [References](#References)
+* [Algorithm](#algorithm)
+* [Generation of data to IRAM and DRAM](#generation-of-data-to-iram-and-dram)
+* [Simulation](#simulation)
+* [Process Log](#process-log)
+* [UART things](#uart-things)
+* [References](#references)
 
 
 ```python
@@ -31,7 +31,7 @@ SVG('Processor_Design_Resources/algo1.svg')
 
 
 
-![svg](output_4_0.svg)
+![svg](algo1.png)
 
 
 
@@ -43,7 +43,7 @@ SVG('Processor_Design_Resources/AlgoFlowChart.svg')
 
 
 
-![svg](output_5_0.svg)
+![svg](algo2.png)
 
 
 
