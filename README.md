@@ -24,26 +24,21 @@ from IPython.display import SVG
 ## Algorithm
 
 
-```python
-SVG('Processor_Design_Resources/algo1.svg')
-```
 
 
 
 
-![svg](algo1.png)
+![png](algo1.png)
 
 
 
 
-```python
-SVG('Processor_Design_Resources/AlgoFlowChart.svg')
-```
 
 
 
 
-![svg](algo2.png)
+
+![png](algo2.png)
 
 
 
