@@ -365,9 +365,9 @@ np.sum((I-I_)**2)
 
 For R2 to increment its value it took $151.7~\mu s$. To process 9 pixels, takes this time. 
 
-Number of 9-pixel blocks = ${128\times 128} $(Output image pixel size)
+Number of 9-pixel blocks = $${128\times 128} $$(Output image pixel size)
 
-Total time = $128^2\times 151.7~\mu s$=
+Total time = $$128^2\times 151.7~\mu s$$=
 
 
 ```python
